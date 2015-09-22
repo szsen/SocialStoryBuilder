@@ -1,0 +1,10 @@
+extends layout
+
+block content
+	a(href="stories") Stories
+	h1= title
+	form(name="addStory",method="post",action="/add-story")
+		input(type="text", placeholder="Title", name="storyTitle")
+		input(type="text", placeholder="url", name="url")
+		input(type="text", placeholder="caption", name="imageCaption")
+		button#btnSubmit(type="submit") submit
