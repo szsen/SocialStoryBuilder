@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	a(href="new-story") Create a Story
+	h1.
+		Stories
+	ul
+		each story, i in storylist
+			li= story.title
