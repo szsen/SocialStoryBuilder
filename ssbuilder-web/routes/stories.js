@@ -29,14 +29,14 @@ router.post('/add-story', function(req, res) {
 	// Get our form values from name attributes
 	var title = req.body.storyTitle;
 	var url = req.body.url;
-	var caption = req.body.imageCaption;
+	var description = req.body.descrip;
 
 	// Set our collection
 	var collection = db.get('stories');
 	// Submit to the DB
 	collection.insert({
 		"title" : title,
-		"caption" : caption,
+		"description" : description,
 		"url" : url
 	}, function (err, doc) {
 		if (err) {

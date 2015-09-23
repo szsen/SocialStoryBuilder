@@ -5,13 +5,13 @@ module.exports = function(grunt) {
 
     // check all js files for errors
     jshint: {
-      all: ['*.js', 'routes/*.js', 'public/**/*.js'] 
+      all: ['*.js', 'routes/*.js', 'public/js/**/*.js'] 
     },
 
     // watch js files and process the above tasks
     watch: {
       js: {
-        files: ['*.js', 'routes/*.js', 'public/**/*.js'],
+        files: ['*.js', 'routes/*.js', 'public/js/**/*.js'],
         tasks: ['jshint']
       }
     },
