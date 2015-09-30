@@ -11,7 +11,6 @@ router.get('/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){
-		console.log(docs);
 		res.render('stories', {
 			"storylist" : docs
 		});
@@ -24,13 +23,12 @@ router.get('/new-story', function(req, res) {
 });
 
 /* POST to Add User Service */
-router.post('/add-story', function(req, res) {
+router.post('/api/add-story', function(req, res) {
 	
 	// Get our form values from name attributes
 	var title = req.body.storyTitle;
 	var url = req.body.url;
 	var description = req.body.descrip;
-
 	// Set our collection
 	var collection = db.get('stories');
 	// Submit to the DB
@@ -45,7 +43,7 @@ router.post('/add-story', function(req, res) {
 		}
 		else {
 			// And forward to success page
-			res.redirect("/stories");
+			res.redirect(302, "/stories");
 		}
 	});
 });
@@ -56,8 +54,7 @@ router.get('/api/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){
-		console.log(docs);
-		res.json(docs[0]);
+		res.json(docs[docs.length - 1]);
 	});
 });
 
