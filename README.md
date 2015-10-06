@@ -1,3 +1,5 @@
+[![Circle CI Status](https://circleci.com/gh/szsen/SocialStoryBuilder.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/szsen/SocialStoryBuilder)
+
 Social Story Builder
 -----------------------
 
