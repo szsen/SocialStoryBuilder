@@ -1,0 +1,5 @@
+general:
+  build_dir: ssbuilder-web
+test:
+  override:
+    - mocha
