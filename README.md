@@ -49,11 +49,15 @@ mocha
 
 ### Continuous Integration
 
-For the web app, we use CircleCI to run build tests on each commit.
+For the web app, we use CircleCI to run build tests on each commit. You can find our build statuses on CircleCI here:
+
+[CircleCI Dashboard](https://circleci.com/gh/szsen/ssbuilder)
 
 ### Continuous Deployment
 
-For the web app, we use CircleCI for continuous delivery via Docker Hub. We then set up [Tutum](https://www.tutum.co/) to automatically deploy our applicaiton service whenever there is a new image available on Docker Hub. 
+For the web app, we use CircleCI for continuous delivery via Docker Hub. We then set up [Tutum](https://www.tutum.co/) to automatically deploy our application service whenever there is a new image available on Docker Hub. You can see our latest build here:
+
+[Social Story Builder Latest](http://91c1fff3-rchen27.node.tutum.io/stories)
 
 ### Team Members
 
