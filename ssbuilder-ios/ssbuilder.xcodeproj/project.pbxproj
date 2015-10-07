@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB692DE81BC5A7AE00D1934E /* SDWebImage.3 in Resources */ = {isa = PBXBuildFile; fileRef = AB692DE71BC5A7AE00D1934E /* SDWebImage.3 */; settings = {ASSET_TAGS = (); }; };
+		AB692DEA1BC5A7C900D1934E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB692DE91BC5A7C900D1934E /* ImageIO.framework */; };
 		ABD7210C1BC579620036133F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7210B1BC579620036133F /* main.m */; };
 		ABD7210F1BC579620036133F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD7210E1BC579620036133F /* AppDelegate.m */; };
 		ABD721121BC579620036133F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ABD721111BC579620036133F /* ViewController.m */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AB692DE71BC5A7AE00D1934E /* SDWebImage.3 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SDWebImage.3; sourceTree = "<group>"; };
+		AB692DE91BC5A7C900D1934E /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		ABD721071BC579620036133F /* ssbuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ssbuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD7210B1BC579620036133F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ABD7210D1BC579620036133F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB692DEA1BC5A7C900D1934E /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,6 +50,8 @@
 		ABD720FE1BC579620036133F = {
 			isa = PBXGroup;
 			children = (
+				AB692DE91BC5A7C900D1934E /* ImageIO.framework */,
+				AB692DE71BC5A7AE00D1934E /* SDWebImage.3 */,
 				ABD721091BC579620036133F /* SocialStoryBuilder1 */,
 				ABD721081BC579620036133F /* Products */,
 			);
@@ -143,6 +150,7 @@
 			files = (
 				ABD7211A1BC579620036133F /* LaunchScreen.storyboard in Resources */,
 				ABD721171BC579620036133F /* Assets.xcassets in Resources */,
+				AB692DE81BC5A7AE00D1934E /* SDWebImage.3 in Resources */,
 				ABD721151BC579620036133F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +279,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SocialStoryBuilder1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.SocialStoryBuilder1;
 				PRODUCT_NAME = ssbuilder;
 			};
@@ -282,6 +291,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SocialStoryBuilder1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				"OTHER_LDFLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.SocialStoryBuilder1;
 				PRODUCT_NAME = ssbuilder;
 			};

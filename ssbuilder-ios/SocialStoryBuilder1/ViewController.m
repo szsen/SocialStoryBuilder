@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Story.h"
+//#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -66,6 +67,7 @@
     self.titleLabel.text = [jsonObject objectForKey:@"title"];
     self.captionLabel.text = [jsonObject objectForKey:@"description"];
     //TODO: NSData data with URL call is VERY SLOW--need to run on background thread?
+    
     self.storyImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[jsonObject objectForKey:@"url"]]]];
     
 }
