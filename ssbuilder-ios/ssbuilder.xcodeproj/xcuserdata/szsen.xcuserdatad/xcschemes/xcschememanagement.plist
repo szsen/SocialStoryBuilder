@@ -4,40 +4,15 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ssbuilder.xcscheme_^#shared#^_</key>
+		<key>SocialStoryBuilder1.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>ssbuilderUnitTest.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>ABA76E291BC572CD0010B72E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ABA76E351BC572D80010B72E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB555F941BB2DA0400A1A547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB555FAD1BB2DA0400A1A547</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EB555FB81BB2DA0500A1A547</key>
+		<key>ABD721061BC579620036133F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

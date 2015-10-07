@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  ssbuilder
+//  SocialStoryBuilder1
 //
-//  Created by Ruiheng Wang on 9/23/15.
-//  Copyright © 2015 Ruiheng Wang. All rights reserved.
+//  Created by Sonia Sen on 10/7/15.
+//  Copyright © 2015 Sonia Sen. All rights reserved.
 //
 
 #import "AppDelegate.h"

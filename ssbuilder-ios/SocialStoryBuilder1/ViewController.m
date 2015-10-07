@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *storyImage;
-@property (weak, nonatomic) IBOutlet UITextField *inputField;
 
 @end
 
@@ -26,8 +25,8 @@
     
     
     // Do any additional setup after loading the view, typically from a nib.
-//}
-
+    //}
+    
     //TODO: should be made dynamic to enforce student name/specific story access credentials
     //string for the URL request
     NSString *myUrlString = @"http://localhost:3000/api/stories";
@@ -66,7 +65,7 @@
     
     self.titleLabel.text = [jsonObject objectForKey:@"title"];
     self.captionLabel.text = [jsonObject objectForKey:@"description"];
-    //TODO: NSData data with URL call is VERY SLOW--need to run on background thread?   
+    //TODO: NSData data with URL call is VERY SLOW--need to run on background thread?
     self.storyImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[jsonObject objectForKey:@"url"]]]];
     
 }

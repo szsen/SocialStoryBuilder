@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-               BuildableName = "ssbuilder.bundle"
+               BlueprintIdentifier = "ABD721061BC579620036133F"
+               BuildableName = "ssbuilder.app"
                BlueprintName = "ssbuilder"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>
@@ -28,32 +28,12 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ABA76E291BC572CD0010B72E"
-               BuildableName = "ssbuilderTests.xctest"
-               BlueprintName = "ssbuilderTests"
-               ReferencedContainer = "container:ssbuilder.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB555FB81BB2DA0500A1A547"
-               BuildableName = "ssbuilderUITests.bundle"
-               BlueprintName = "ssbuilderUITests"
-               ReferencedContainer = "container:ssbuilder.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.bundle"
+            BlueprintIdentifier = "ABD721061BC579620036133F"
+            BuildableName = "ssbuilder.app"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>
@@ -75,8 +55,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.bundle"
+            BlueprintIdentifier = "ABD721061BC579620036133F"
+            BuildableName = "ssbuilder.app"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>
@@ -94,8 +74,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.bundle"
+            BlueprintIdentifier = "ABD721061BC579620036133F"
+            BuildableName = "ssbuilder.app"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>

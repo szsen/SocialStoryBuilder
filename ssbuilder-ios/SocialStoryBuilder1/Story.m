@@ -19,18 +19,18 @@
         NSDictionary *storyInfo = storyInfo_;
         NSLog(@"Story Info = %@", storyInfo);
         self.title = [storyInfo  valueForKey:@"title"];
-   
+        
         self.caption = [storyInfo  valueForKey:@"description"];
     }
     return self;
 }
-    
+
 - (void) dealloc
-    {
-        self.title = nil;
-        self.caption = nil;
-        
-    }
+{
+    self.title = nil;
+    self.caption = nil;
+    
+}
 @end
 
 
