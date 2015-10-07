@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "EB555FAD1BB2DA0400A1A547"
-               BuildableName = "ssbuilderTests.bundle"
+               BlueprintIdentifier = "ABA76E291BC572CD0010B72E"
+               BuildableName = "ssbuilderTests.xctest"
                BlueprintName = "ssbuilderTests"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>

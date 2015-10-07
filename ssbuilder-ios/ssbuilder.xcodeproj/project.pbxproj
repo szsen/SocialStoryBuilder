@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ABA76E2D1BC572CD0010B72E /* ssbuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA76E2C1BC572CD0010B72E /* ssbuilderTests.m */; };
+		ABA76E391BC572D80010B72E /* ssbuilderUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = ABA76E381BC572D80010B72E /* ssbuilderUnitTest.m */; };
 		EB555F9A1BB2DA0400A1A547 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555F991BB2DA0400A1A547 /* main.m */; };
 		EB555F9D1BB2DA0400A1A547 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555F9C1BB2DA0400A1A547 /* AppDelegate.m */; };
 		EB555FA01BB2DA0400A1A547 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555F9F1BB2DA0400A1A547 /* ViewController.m */; };
@@ -18,6 +20,12 @@
 /* Begin PBXFileReference section */
 		AB3964551BBC6C35003740E9 /* urlTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = urlTests.m; sourceTree = "<group>"; };
 		ABA76E241BC56FBE0010B72E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		ABA76E2A1BC572CD0010B72E /* ssbuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ssbuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA76E2C1BC572CD0010B72E /* ssbuilderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssbuilderTests.m; sourceTree = "<group>"; };
+		ABA76E2E1BC572CD0010B72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA76E361BC572D80010B72E /* ssbuilderUnitTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ssbuilderUnitTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA76E381BC572D80010B72E /* ssbuilderUnitTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ssbuilderUnitTest.m; sourceTree = "<group>"; };
+		ABA76E3A1BC572D80010B72E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB555F951BB2DA0400A1A547 /* ssbuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ssbuilder.app; path = ssbuilder.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB555F991BB2DA0400A1A547 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EB555F9B1BB2DA0400A1A547 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -36,6 +44,20 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		ABA76E271BC572CD0010B72E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA76E331BC572D80010B72E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB555F921BB2DA0400A1A547 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +68,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABA76E2B1BC572CD0010B72E /* ssbuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				ABA76E2C1BC572CD0010B72E /* ssbuilderTests.m */,
+				ABA76E2E1BC572CD0010B72E /* Info.plist */,
+			);
+			path = ssbuilderTests;
+			sourceTree = "<group>";
+		};
+		ABA76E371BC572D80010B72E /* ssbuilderUnitTest */ = {
+			isa = PBXGroup;
+			children = (
+				ABA76E381BC572D80010B72E /* ssbuilderUnitTest.m */,
+				ABA76E3A1BC572D80010B72E /* Info.plist */,
+			);
+			path = ssbuilderUnitTest;
+			sourceTree = "<group>";
+		};
 		EB555F8C1BB2DA0400A1A547 = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +93,8 @@
 				EB555F971BB2DA0400A1A547 /* ssbuilder */,
 				EB555FB11BB2DA0400A1A547 /* ssbuilderTests */,
 				EB555FBC1BB2DA0500A1A547 /* ssbuilderUITests */,
+				ABA76E2B1BC572CD0010B72E /* ssbuilderTests */,
+				ABA76E371BC572D80010B72E /* ssbuilderUnitTest */,
 				EB555F961BB2DA0400A1A547 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				EB555F951BB2DA0400A1A547 /* ssbuilder.app */,
+				ABA76E2A1BC572CD0010B72E /* ssbuilderTests.xctest */,
+				ABA76E361BC572D80010B72E /* ssbuilderUnitTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -112,6 +156,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		ABA76E291BC572CD0010B72E /* ssbuilderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABA76E2F1BC572CD0010B72E /* Build configuration list for PBXNativeTarget "ssbuilderTests" */;
+			buildPhases = (
+				ABA76E261BC572CD0010B72E /* Sources */,
+				ABA76E271BC572CD0010B72E /* Frameworks */,
+				ABA76E281BC572CD0010B72E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ssbuilderTests;
+			productName = ssbuilderTests;
+			productReference = ABA76E2A1BC572CD0010B72E /* ssbuilderTests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		ABA76E351BC572D80010B72E /* ssbuilderUnitTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ABA76E3B1BC572D80010B72E /* Build configuration list for PBXNativeTarget "ssbuilderUnitTest" */;
+			buildPhases = (
+				ABA76E321BC572D80010B72E /* Sources */,
+				ABA76E331BC572D80010B72E /* Frameworks */,
+				ABA76E341BC572D80010B72E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ssbuilderUnitTest;
+			productName = ssbuilderUnitTest;
+			productReference = ABA76E361BC572D80010B72E /* ssbuilderUnitTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EB555F941BB2DA0400A1A547 /* ssbuilder */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB555FC21BB2DA0500A1A547 /* Build configuration list for PBXNativeTarget "ssbuilder" */;
@@ -138,6 +216,12 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Ruiheng Wang";
 				TargetAttributes = {
+					ABA76E291BC572CD0010B72E = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					ABA76E351BC572D80010B72E = {
+						CreatedOnToolsVersion = 7.0;
+					};
 					EB555F941BB2DA0400A1A547 = {
 						CreatedOnToolsVersion = 7.0;
 					};
@@ -157,11 +241,27 @@
 			projectRoot = "";
 			targets = (
 				EB555F941BB2DA0400A1A547 /* ssbuilder */,
+				ABA76E291BC572CD0010B72E /* ssbuilderTests */,
+				ABA76E351BC572D80010B72E /* ssbuilderUnitTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		ABA76E281BC572CD0010B72E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA76E341BC572D80010B72E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB555F931BB2DA0400A1A547 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +274,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		ABA76E261BC572CD0010B72E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA76E2D1BC572CD0010B72E /* ssbuilderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ABA76E321BC572D80010B72E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABA76E391BC572D80010B72E /* ssbuilderUnitTest.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EB555F911BB2DA0400A1A547 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -199,6 +315,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		ABA76E301BC572CD0010B72E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ssbuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.ssbuilderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABA76E311BC572CD0010B72E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ssbuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.ssbuilderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ABA76E3C1BC572D80010B72E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ssbuilderUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.ssbuilderUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ABA76E3D1BC572D80010B72E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ssbuilderUnitTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.cs2048.ssbuilderUnitTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		EB555FC01BB2DA0500A1A547 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -306,6 +462,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		ABA76E2F1BC572CD0010B72E /* Build configuration list for PBXNativeTarget "ssbuilderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABA76E301BC572CD0010B72E /* Debug */,
+				ABA76E311BC572CD0010B72E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ABA76E3B1BC572D80010B72E /* Build configuration list for PBXNativeTarget "ssbuilderUnitTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ABA76E3C1BC572D80010B72E /* Debug */,
+				ABA76E3D1BC572D80010B72E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		EB555F901BB2DA0400A1A547 /* Build configuration list for PBXProject "ssbuilder" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -2,7 +2,7 @@
 //  ssbuilderTests.m
 //  ssbuilderTests
 //
-//  Created by Ruiheng Wang on 9/23/15.
+//  Created by Sonia Sen on 10/7/15.
 //  Copyright © 2015 Ruiheng Wang. All rights reserved.
 //
 
@@ -16,9 +16,16 @@
 
 - (void)setUp {
     [super setUp];
+    
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    // In UI tests it is usually best to stop immediately when a failure occurs.
+    self.continueAfterFailure = NO;
+    // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
+    [[[XCUIApplication alloc] init] launch];
+    
+    // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
 }
-
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
@@ -26,31 +33,8 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
+    // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    
-    
-    /* Here is an Instruments Automation testing
-     
-     var target = UIATarget.localTarget();
-     
-     //Testing the receiving of the title
-     var stringResult = target.frontMostApp().mainWindow().staticTexts()[0];
-     if (! stringResult.isValid()) UIALogger.logFail("The Story Title was NOT received");
-     else UIALogger.logPass("The Story Title was set and received!");
-     
-     //Testinf the receiving of the caption
-     var stringResult = target.frontMostApp().mainWindow().staticTexts()[1];
-     if (! stringResult.isValid()) UIALogger.logFail("The Story Caption was NOT received");
-     else UIALogger.logPass("The Story Caption was set and received!");
-     */
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
 }
 
 @end
