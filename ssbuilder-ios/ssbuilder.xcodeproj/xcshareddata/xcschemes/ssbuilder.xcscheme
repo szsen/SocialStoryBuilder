@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-               BuildableName = "ssbuilder.app"
+               BuildableName = "ssbuilder.bundle"
                BlueprintName = "ssbuilder"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB555FAD1BB2DA0400A1A547"
-               BuildableName = "ssbuilderTests.xctest"
+               BuildableName = "ssbuilderTests.bundle"
                BlueprintName = "ssbuilderTests"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB555FB81BB2DA0500A1A547"
-               BuildableName = "ssbuilderUITests.app"
+               BuildableName = "ssbuilderUITests.bundle"
                BlueprintName = "ssbuilderUITests"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.app"
+            BuildableName = "ssbuilder.bundle"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.app"
+            BuildableName = "ssbuilder.bundle"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "EB555F941BB2DA0400A1A547"
-            BuildableName = "ssbuilder.app"
+            BuildableName = "ssbuilder.bundle"
             BlueprintName = "ssbuilder"
             ReferencedContainer = "container:ssbuilder.xcodeproj">
          </BuildableReference>
