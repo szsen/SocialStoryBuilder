@@ -46,7 +46,7 @@ To run tests enter the commands:
 ```
 mocha
 ```
- 
+
 ### Continuous Integration
 
 For the web app, we use CircleCI to run build tests on each commit.
