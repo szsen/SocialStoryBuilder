@@ -182,7 +182,7 @@ EB555FB21BB2DA0400A1A547 /* ssbuilderTests.m */ = {isa = PBXFileReference; lastK
 			name = ssbuilderTests;
 			productName = ssbuilderTests;
 			productReference = EB555FAE1BB2DA0400A1A547 /* ssbuilderTests.xctest */;
-			productType = "com.apple.product-type.bundle
+			productType = "com.apple.product-type.application
 ";
 		};
 		EB555FB81BB2DA0500A1A547 /* ssbuilderUITests */ = {
@@ -201,7 +201,7 @@ EB555FB21BB2DA0400A1A547 /* ssbuilderTests.m */ = {isa = PBXFileReference; lastK
 			name = ssbuilderUITests;
 			productName = ssbuilderUITests;
 			productReference = EB555FB91BB2DA0500A1A547 /* ssbuilderUITests.xctest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
