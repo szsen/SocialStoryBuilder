@@ -43,7 +43,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EB555FB81BB2DA0500A1A547"
-               BuildableName = "ssbuilderUITests.xctest"
+               BuildableName = "ssbuilderUITests.bundle"
                BlueprintName = "ssbuilderUITests"
                ReferencedContainer = "container:ssbuilder.xcodeproj">
             </BuildableReference>
