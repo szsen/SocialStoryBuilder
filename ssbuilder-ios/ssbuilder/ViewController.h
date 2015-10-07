@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-@property (nonatomic, strong) UILabel *title;
-@property (nonatomic, strong) UILabel *caption;
 @property (nonatomic, strong) id jsonObject;
 
 

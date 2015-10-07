@@ -10,14 +10,15 @@
 #import "Story.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
 @property (weak, nonatomic) IBOutlet UITextField *inputField;
 
 @end
 
 @implementation ViewController
 
-@synthesize title;
-@synthesize caption;
 @synthesize jsonObject;
 
 - (void)viewDidLoad {
@@ -34,7 +35,7 @@
     NSURL *myUrl = [NSURL URLWithString:myUrlString];
     
     NSURLSession *urlSession = [NSURLSession sharedSession];
-    [[urlSession dataTaskWithURL:myUrl completionHandler:^(NSData *data, NSURLResponse *response,NSError *error) {
+    [[urlSession dataTaskWithURL:myUrl completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if ([data length] >0 && error == nil){
             //process the JSON response
             //use the main queue so that we can interact with the screen
@@ -51,16 +52,6 @@
     }]resume];
     
     [self.navigationItem setTitle:@"Story Detail"];
-    
-    //bunch of labels for story information
-    CGRect myFrame = CGRectMake(10.0f, 10.0f, 250.0f, 30.0f);
-    self.title = [[UILabel alloc] initWithFrame:myFrame];
-    self.title.font = [UIFont boldSystemFontOfSize:20.0f];
-    [self.view addSubview:self.title];
-    
-    myFrame.origin.y += 25.0f;
-    self.caption = [[UILabel alloc] initWithFrame:myFrame];
-    [self.view addSubview:self.caption];
 }
 
 - (void) parseResponse: (NSData *) data{
@@ -73,10 +64,10 @@
         NSLog(@"successfully deserialized...");
     }
     
-    
-    
-    self.title.text = [jsonObject objectForKey:@"title"];
-    self.caption.text = [jsonObject objectForKey:@"caption"];
+    self.titleLabel.text = [jsonObject objectForKey:@"title"];
+    self.captionLabel.text = [jsonObject objectForKey:@"description"];
+    //TODO: NSData data with URL call is VERY SLOW--need to run on background thread?   
+    self.storyImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[jsonObject objectForKey:@"url"]]]];
     
 }
 
@@ -87,8 +78,8 @@
     //create story object from dictionary data
     Story *story = [[Story alloc] initWithNSDictionary: jsonObject];
     //set the label values from the story object
-    self.title.text = [[NSString alloc] initWithFormat:@"Title = %@", story.title ];
-    self.caption.text = [NSString stringWithFormat:@"Caption = %@", story.caption] ;
+    self.titleLabel.text = [[NSString alloc] initWithFormat:@"Title = %@", story.title ];
+    self.captionLabel.text = [NSString stringWithFormat:@"Caption = %@", story.caption] ;
 }
 
 

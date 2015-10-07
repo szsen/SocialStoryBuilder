@@ -20,7 +20,7 @@
         NSLog(@"Story Info = %@", storyInfo);
         self.title = [storyInfo  valueForKey:@"title"];
    
-        self.caption = [storyInfo  valueForKey:@"caption"];
+        self.caption = [storyInfo  valueForKey:@"description"];
     }
     return self;
 }
