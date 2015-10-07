@@ -3,7 +3,9 @@ var router = express.Router();
 
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('/socialStories');
+var secrets = require('../config/secrets');
+//var db = monk('/socialStories');
+var db = monk(secrets.db);
 
 /* GET story list page. */
 router.get('/stories', function(req, res) {

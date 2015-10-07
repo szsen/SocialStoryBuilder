@@ -1,0 +1,12 @@
+app:
+  image: node
+  volumes:
+    - ./:/ssbuilder-web/
+  working_dir: /ssbuilder-web/
+  command: node ssbuilder/bin/www
+  ports:
+    - "3000:3000"
+  links:
+    - database
+database:
+  image: mongo
