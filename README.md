@@ -13,7 +13,7 @@ Create a web application that would allow teachers, therapists, or parents to cr
 
 ### Web App
 
-To get started, navigate to ssbuilder-web and run:
+The web app will have an editor for teachers to create social stories and link them to their students. To get started, navigate to ssbuilder-web and run:
 
 ```
 npm install
@@ -55,7 +55,7 @@ For the web app, we use CircleCI to run build tests on each commit. You can find
 
 ### Continuous Deployment
 
-For the web app, we use CircleCI for continuous delivery via Docker Hub. We then set up [Tutum](https://www.tutum.co/) to automatically deploy our application service whenever there is a new image available on Docker Hub. You can see our latest build here:
+For the web app, we use CircleCI for continuous delivery via Docker Hub. We then set up [Tutum](https://www.tutum.co/) to automatically deploy our application service whenever there is a new image available on Docker Hub. You can see our latest build live here:
 
 [Social Story Builder Latest](http://91c1fff3-rchen27.node.tutum.io/stories)
 
