@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/szsen/SocialStoryBuilder.svg?style=shield&circle-token=6dcc69c259a452d1e6aaf71ab9fe18a0aec168bd)](https://circleci.com/gh/szsen/SocialStoryBuilder/tree/master)
+[![Circle CI](https://circleci.com/gh/szsen/SocialStoryBuilder.svg?style=shield&circle-token=6dcc69c259a452d1e6aaf71ab9fe18a0aec168bd)](https://circleci.com/gh/szsen/ssbuilder)
 
 Social Story Builder
 -----------------------
