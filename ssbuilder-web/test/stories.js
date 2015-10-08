@@ -46,3 +46,56 @@ describe('Story API', function(){
 		});
 	});
 });
+
+describe('Student API', function(){
+	var testStudentName = "Test Student 1";
+	var testStory1 = "Test Story 1";
+	var testStory2 = "Test Story 2";
+	before(function(done) {
+		var test_stories = [
+		    { title: testStory1, description : "Description.", url : "http://placehold.it/320x150"},
+		    { title: testStory2, description : "Description.", url : "http://placehold.it/320x150"}
+		];
+		var collection = db.get('stories');
+		collection.insert(test_stories, function(err, docs){
+			var student = { name: testStudentName, stories: [ docs[0]._id, docs[1]._id ] };
+			collection = db.get('students');
+			collection.insert(student, function(err, docs){
+				console.log('Test objects inserted.');
+				done();
+			});
+		});
+	});
+	it ('GET request to get the list of students', function(done){
+		request(app)
+		.get('/api/students').end(function(err, res){
+			// check that response is okay
+			expect(res).to.exist;
+			expect(res.status).to.equal(200);
+			expect(res.body[res.body.length - 1].name).to.equal(testStudentName);
+			done();
+		});
+	});
+	it ('GET request to get list of stories for our test student', function(done){
+		request(app)
+		.get('/api/student-story/'+testStudentName).end(function(err, res){
+			expect(res).to.exist;
+			expect(res.status).to.equal(200);
+			expect(res.body[0].title).to.equal(testStory1);
+			expect(res.body[1].title).to.equal(testStory2);
+			done();
+		});
+	});
+	after(function(done) {
+		var collection = db.get('students');
+		collection.remove({ name: testStudentName }, function(err, docs){
+			collection = db.get('stories');
+			collection.remove({ title : { $in : [ testStory1, testStory2] } }, function(err, docs){
+				console.log(err);
+				console.log(docs);
+				console.log('Test objects removed.');
+				done();
+			});
+		});
+	});
+});

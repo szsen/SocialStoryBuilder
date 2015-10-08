@@ -22,12 +22,10 @@ while ( cursor.hasNext() ) {
 	storyIds.push(s._id);
 }
 
-print(storyIds);
-
 var students = [
     { name: "Roger Chen", stories: storyIds.slice(0, 2) },
     { name: "Sonia Sen", stories: storyIds.slice(2, 4) },
-    { name: "Rachel Wang", stories: storyIds.slice(4) }
+    { name: "Rachel Wang", stories: storyIds.slice(4, 6) }
 ];
 
 db.students.insert(students);
