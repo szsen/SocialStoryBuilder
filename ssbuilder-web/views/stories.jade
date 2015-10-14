@@ -9,7 +9,7 @@ block content
     meta(name='author', content='')
     title Social Story Builder
     // Bootstrap Core CSS
-    link(href='libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
     link(href='css/story-list.css', rel='stylesheet')
   body
@@ -45,7 +45,7 @@ block content
                   img(src='#{story.url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
                   .caption
                     h4
-                      a(href='#')= story.title
+                      a(href='view/' + story._id)= story.title
                     p= story.description
     .container
       hr
@@ -56,6 +56,6 @@ block content
             p
     // /.container
     // jQuery
-    script(src='libs/jquery/dist/jquery.min.js')
+    script(src='/libs/jquery/dist/jquery.min.js')
     // Bootstrap Core JavaScript
-    script(src='libs/bootstrap/dist/js/bootstrap.min.js')
+    script(src='/libs/bootstrap/dist/js/bootstrap.min.js')
