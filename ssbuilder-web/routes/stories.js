@@ -9,7 +9,6 @@ var db = monk(secrets.db);
 
 /* GET story list page. */
 router.get('/stories', function(req, res) {
-
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){

@@ -28,17 +28,4 @@ block content
           ul.nav.navbar-nav
             li
               a(href='new-story') Create New Story
-    .container
-      .col-md-5
-        .form-area
-          form(role='form',method="post",action="/api/add-story")
-            br(style='clear:both')
-            h3(style='margin-bottom: 25px; text-align: center;') New Story
-            .form-group
-              input#name.form-control(type='text', name='storyTitle', placeholder='Title')
-            .form-group
-              input#subject.form-control(type='text', name='url', value="http://placehold.it/320x150", placeholder='Image')
-            .form-group
-              textarea#message.form-control(type='textarea', name='descrip', placeholder='Description', rows='7')
-              span.help-block
-            button#submit.btn.btn-primary.pull-right(type='submit', name='submit') Add Story
+    editor

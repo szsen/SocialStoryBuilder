@@ -42,7 +42,7 @@ block content
             each story, i in storylist
               .col-sm-4.col-lg-4.col-md-4
                 .thumbnail
-                  img(src='#{story.url}', alt='')
+                  img(src='#{story.url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
                   .caption
                     h4
                       a(href='#')= story.title
@@ -53,7 +53,7 @@ block content
       footer
         .row
           .col-lg-12
-            p Copyright ©
+            p
     // /.container
     // jQuery
     script(src='libs/jquery/dist/jquery.min.js')
