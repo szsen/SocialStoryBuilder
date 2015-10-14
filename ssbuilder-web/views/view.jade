@@ -27,7 +27,7 @@ html(lang='en')
             span.icon-bar
             span.icon-bar
             span.icon-bar
-          a.navbar-brand(href='stories') Stories
+          a.navbar-brand(href='/stories') Stories
         // Collect the nav links, forms, and other content for toggling
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
@@ -48,7 +48,7 @@ html(lang='en')
           // Set the first background image using inline CSS below.
           .fill(style="background-image:url('http://placehold.it/1900x1080&text=Slide One');")
           .carousel-caption
-            h2 Caption 1
+            h2 #{story.description}
         .item
           // Set the second background image using inline CSS below.
           .fill(style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');")
