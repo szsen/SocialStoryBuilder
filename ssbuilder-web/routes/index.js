@@ -3,9 +3,9 @@ var router = express.Router();
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-	res.redirect('/stories');
-	//res.render('index', { title: 'Social Story Builder' });
+router.get('/index', function(req, res, next) {
+	//res.redirect('/stories');
+	res.render('index', { title: 'Social Story Builder' });
 });
 
 module.exports = router;
