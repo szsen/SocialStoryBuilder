@@ -4,13 +4,22 @@ db = conn.getDB("socialStories");
 db.stories.drop();
 db.students.drop();
 
+// var stories = [
+//     {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Money", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150"}
+// ];
+
 var stories = [
-    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Money", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150"}
+    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : []},
+    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : []},
+    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : []},
+    {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : []},
+    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : []},
+    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : []}
 ];
 
 db.stories.insert(stories);

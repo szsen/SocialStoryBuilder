@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Social Story Builder
+    // Bootstrap Core CSS
+    link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/css/story-list.css', rel='stylesheet')
+  body
+    .container
+      .row
+        .col-md-9
+          p.lead(style="padding-top: 20px;") Edit Story
+          .form-area
+            form(role='form', method='post', action='/update-story/#{story._id}')
+              .form-group
+                input#name.form-control(type='text', name='storyTitle', placeholder='Title', value='#{story.title}')
+              .form-group
+                textarea#message.form-control(type='textarea', name='descrip', placeholder='Description', rows='7')= story.description
+                span.help-block
+              .row
+                each panel, i in story.panels
+                  .col-sm-4.col-lg-4.col-md-4
+                    .thumbnail
+                      img(src='#{panel.url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
+                      .caption(style="text-align:center;")
+                        p= panel.caption
+                        p
+                          a.btn.btn-default(href='/edit-panel/#{story._id}/#{i}') Edit
+                          | &nbsp;
+                          | &nbsp;
+                          a.btn.btn-default(href='#') Delete
+              button#submit.btn.btn-primary(type='submit', name='submit') Done
