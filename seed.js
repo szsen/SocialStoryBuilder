@@ -13,13 +13,18 @@ db.students.drop();
 //     {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150"}
 // ];
 
+var sPanels = [];
+for (var i = 0; i < 6; i++) {
+    sPanels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
+}
+
 var stories = [
-    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : []},
-    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : []},
-    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : []},
-    {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : []},
-    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : []},
-    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : []}
+    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels}
 ];
 
 db.stories.insert(stories);

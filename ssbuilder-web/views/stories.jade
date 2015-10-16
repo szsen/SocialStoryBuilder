@@ -27,7 +27,7 @@ block content
             each story, i in storylist
               .col-sm-4.col-lg-4.col-md-4
                 .thumbnail
-                  img(src='#{story.url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
+                  img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
                   .caption(style="text-align:center;")
                     h4
                       a(href='view/' + story._id)= story.title
