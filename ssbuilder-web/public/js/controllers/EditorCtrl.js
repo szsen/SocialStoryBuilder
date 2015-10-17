@@ -6,11 +6,14 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
   var paneldata = JSON.parse($attrs.paneldata);
   $scope.formUrl = "/update-panel/"+ paneldata._id + "/"+ paneldata.ind;
   $scope.caption = paneldata.caption;
+  $scope.image = paneldata.url;
   console.log($scope.ind);
 
 	function addImage(imgUrl) {
 		var input = document.getElementById('subject');
-        input.value = imgUrl;
+    input.value = imgUrl;
+    var img = document.getElementById('imgSrc');
+    img.src = imgUrl;
 	}
 
 	function searchComplete() {
