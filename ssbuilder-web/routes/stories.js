@@ -18,6 +18,33 @@ router.get('/stories', function(req, res) {
 	});
 });
 
+/* GET create new story page. */
+router.post('/edit-new-story', function(req, res) {
+	var collection = db.get('stories');
+	var panels = [];
+	var title = req.body.storyTitle;
+	var description = req.body.descrip;
+	console.log(title);
+	for (var i = 0; i < 6; i++) {
+		panels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
+	}
+	var newStory = {
+		"title": title,
+		"description" : description,
+		"panels" : panels
+	};
+	collection.insert(newStory, function (err, doc) {
+		if (err) {
+			// If it failed, return error
+			res.send("There was a problem adding the information to the database.");
+		}
+		else {
+			// And forward to success page
+			res.redirect("/edit-story/"+doc._id);
+		}
+	});
+});
+
 /* GET edit story page. */
 router.get('/edit-story/:storyId', function(req, res) {
 	var storyId = req.params.storyId;
@@ -33,32 +60,6 @@ router.get('/edit-story/:storyId', function(req, res) {
 		res.render('edit-story', {
 			"story" : docs[0]
 		});
-	});
-});
-
-/* GET create new story page. */
-router.get('/edit-story', function(req, res) {
-	var storyId = req.params.storyId;
-	var collection = db.get('stories');
-	var panels = [];
-	for (var i = 0; i < 6; i++) {
-		panels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
-	}
-	var newStory = {
-		title: '',
-		description : '',
-		url : "http://placehold.it/320x150",
-		"panels" : panels
-	};
-	collection.insert(newStory, function (err, doc) {
-		if (err) {
-			// If it failed, return error
-			res.send("There was a problem adding the information to the database.");
-		}
-		else {
-			// And forward to success page
-			res.redirect("/edit-story/"+doc._id);
-		}
 	});
 });
 
