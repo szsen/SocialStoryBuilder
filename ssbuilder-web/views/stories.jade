@@ -33,9 +33,12 @@ block content
         .col-md-3
           p.lead Students
           .list-group
-            a.list-group-item.active(href='#') Eric Forman
-            a.list-group-item(href='#') John Smith
-            a.list-group-item(href='#') Ann Keane
+            
+            each student, i in studentlist
+              if i==0
+                a.list-group-item.active(href='#')= student.name
+              else
+                a.list-group-item(href='#')= student.name
         .col-md-9
           p.lead Social Stories
           .row

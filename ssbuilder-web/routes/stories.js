@@ -10,10 +10,14 @@ var db = monk(secrets.db);
 /* GET story list page. */
 router.get('/stories', function(req, res) {
 	//res.send('respond with a resource');
-	var collection = db.get('stories');
-	collection.find({},{},function(e,docs){
-		res.render('stories', {
-			"storylist" : docs
+	var collection = db.get('students');
+	collection.find({name:studentName},{},function(err,docs){
+		collection = db.get('stories');
+		collection.find({ _id: {$in: docs[0].stories } },{},function(e,d){
+			res.render('stories', {
+				"storylist" : docs, 
+				"studentlist" : d
+			});
 		});
 	});
 });
