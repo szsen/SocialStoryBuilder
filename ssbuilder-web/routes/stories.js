@@ -84,29 +84,14 @@ router.get('/edit-panel/:storyId/:ind', function(req, res) {
 	});
 });
 
-/* Not used */
-router.post('/api/add-story', function(req, res) {
-	
-	// Get our form values from name attributes
-	var title = req.body.storyTitle;
-	var url = req.body.url;
-	var description = req.body.descrip;
+/* Delete story */
+router.get('/delete-story/:storyId', function(req, res) {
+	var storyId = req.params.storyId;
 	// Set our collection
 	var collection = db.get('stories');
 	// Submit to the DB
-	collection.insert({
-		"title" : title,
-		"description" : description,
-		"url" : url
-	}, function (err, doc) {
-		if (err) {
-			// If it failed, return error
-			res.send("There was a problem adding the information to the database.");
-		}
-		else {
-			// And forward to success page
-			res.redirect(302, "/stories");
-		}
+	collection.remove({_id : storyId}, function (err, doc) {
+		res.redirect('/stories');
 	});
 });
 
