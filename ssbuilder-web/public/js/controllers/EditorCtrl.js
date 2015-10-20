@@ -1,18 +1,22 @@
 /*jshint loopfunc: true */
 //editor controller
-angular.module('EditorCtrl', []).controller('EditorController', function($scope, $document) {
-	console.log('Hello World');
+angular.module('EditorCtrl', []).controller('EditorController', function($scope, $document, $attrs) {
 	var imageSearch;
-	
+  console.log('paneldata');
+  var paneldata = JSON.parse($attrs.paneldata);
+  $scope.formUrl = "/update-panel/"+ paneldata._id + "/"+ paneldata.ind;
+  $scope.caption = paneldata.caption;
+  $scope.image = paneldata.url;
+  console.log($scope.ind);
+
 	function addImage(imgUrl) {
-		console.log('clicked image');
-		console.log(imgUrl);
 		var input = document.getElementById('subject');
-        input.value = imgUrl;
+    input.value = imgUrl;
+    var img = document.getElementById('imgSrc');
+    img.src = imgUrl;
 	}
 
 	function searchComplete() {
-		console.log('asdfdsf');
         // Check that we got results
         if (imageSearch.results && imageSearch.results.length > 0) {
 
@@ -34,11 +38,11 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
 
             // There is also a result.url property which has the escaped version
             newImg.src=result.tbUrl;
-			newImg.setAttribute('realLink', result.url);
-			newImg.setAttribute('style', 'display:block; margin:auto; padding:10px;');
+            newImg.setAttribute('realLink', result.url);
+            newImg.setAttribute('style', 'display:block; margin:auto; padding:10px;');
             newImg.addEventListener("click", function(e){
-				addImage(e.target.attributes[1].value);
-			}, false);
+            addImage(e.target.attributes[1].value);
+            }, false);
             //imgContainer.appendChild(title);
             imgContainer.appendChild(newImg);
 
@@ -73,6 +77,6 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
 	return {
 		controller: 'EditorController',
 		restrict: 'E',
-		templateUrl: 'templates/editor.html'
+		templateUrl: '/templates/editor.html'
 	};
 });

@@ -4,13 +4,27 @@ db = conn.getDB("socialStories");
 db.stories.drop();
 db.students.drop();
 
+// var stories = [
+//     {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Money", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150"},
+//     {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150"}
+// ];
+
+var sPanels = [];
+for (var i = 0; i < 6; i++) {
+    sPanels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
+}
+
 var stories = [
-    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Money", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150"},
-    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150"}
+    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels}
 ];
 
 db.stories.insert(stories);
