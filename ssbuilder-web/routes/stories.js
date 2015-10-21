@@ -13,7 +13,7 @@ router.get('/stories', function(req, res) {
 	var collection = db.get('students');
 	collection.find({},{},function(err,docs){
 		collection = db.get('stories');
-		collection.find({},{},function(e,d){
+		collection.find({},{sort: {title: 1}},function(e,d){
 			console.log(docs);
 			res.render('stories', {
 				"storylist" : d, 
