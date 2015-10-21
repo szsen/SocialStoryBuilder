@@ -11,9 +11,9 @@ var db = monk(secrets.db);
 router.get('/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('students');
-	collection.find({name:studentName},{},function(err,docs){
+	collection.find({},{},function(err,docs){
 		collection = db.get('stories');
-		collection.find({ _id: {$in: docs[0].stories } },{},function(e,d){
+		collection.find({},{},function(e,d){
 			res.render('stories', {
 				"storylist" : docs, 
 				"studentlist" : d
