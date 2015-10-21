@@ -55,7 +55,7 @@ router.get('/api/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){
-		res.json(docs[docs.length - 1]);
+		res.json(docs);
 	});
 });
 

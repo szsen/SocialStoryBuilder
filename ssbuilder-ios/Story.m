@@ -9,8 +9,9 @@
 #import "Story.h"
 
 @implementation Story
-@synthesize title;
-@synthesize caption;
+//@synthesize title;
+//@synthesize caption;
+@synthesize name;
 
 -(id)initWithNSDictionary:(NSDictionary *)storyInfo_{
     self = [super init];
@@ -18,17 +19,18 @@
         
         NSDictionary *storyInfo = storyInfo_;
         NSLog(@"Story Info = %@", storyInfo);
-        self.title = [storyInfo  valueForKey:@"title"];
-   
-        self.caption = [storyInfo  valueForKey:@"description"];
+        //self.title = [storyInfo  valueForKey:@"title"];
+        //self.caption = [storyInfo  valueForKey:@"description"];
+        self.name = [storyInfo  valueForKey:@"name"];
     }
     return self;
 }
     
 - (void) dealloc
     {
-        self.title = nil;
-        self.caption = nil;
+        //self.title = nil;
+        //self.caption = nil;
+        self.name = nil;
         
     }
 @end

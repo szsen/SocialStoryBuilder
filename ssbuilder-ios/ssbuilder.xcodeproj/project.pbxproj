@@ -17,6 +17,7 @@
 		EB555FB31BB2DA0400A1A547 /* ssbuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555FB21BB2DA0400A1A547 /* ssbuilderTests.m */; };
 		EB555FBE1BB2DA0500A1A547 /* ssbuilderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555FBD1BB2DA0500A1A547 /* ssbuilderUITests.m */; };
 		EB555FE61BB312BA00A1A547 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = EB555FE51BB312BA00A1A547 /* Story.m */; settings = {ASSET_TAGS = (); }; };
+		EB84FE031BCE285900E450B7 /* MyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB84FE021BCE285900E450B7 /* MyTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		EB555FBF1BB2DA0500A1A547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB555FE41BB312BA00A1A547 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Story.h; path = ../Story.h; sourceTree = "<group>"; };
 		EB555FE51BB312BA00A1A547 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Story.m; path = ../Story.m; sourceTree = "<group>"; };
+		EB84FE011BCE285900E450B7 /* MyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableViewController.h; sourceTree = "<group>"; };
+		EB84FE021BCE285900E450B7 /* MyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				EB555F9C1BB2DA0400A1A547 /* AppDelegate.m */,
 				EB555F9E1BB2DA0400A1A547 /* ViewController.h */,
 				EB555F9F1BB2DA0400A1A547 /* ViewController.m */,
+				EB84FE011BCE285900E450B7 /* MyTableViewController.h */,
+				EB84FE021BCE285900E450B7 /* MyTableViewController.m */,
 				EB555FA11BB2DA0400A1A547 /* Main.storyboard */,
 				EB555FA41BB2DA0400A1A547 /* Assets.xcassets */,
 				EB555FA61BB2DA0400A1A547 /* LaunchScreen.storyboard */,
@@ -279,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB555FA01BB2DA0400A1A547 /* ViewController.m in Sources */,
+				EB84FE031BCE285900E450B7 /* MyTableViewController.m in Sources */,
 				EB555F9D1BB2DA0400A1A547 /* AppDelegate.m in Sources */,
 				EB555F9A1BB2DA0400A1A547 /* main.m in Sources */,
 				EB555FE61BB312BA00A1A547 /* Story.m in Sources */,

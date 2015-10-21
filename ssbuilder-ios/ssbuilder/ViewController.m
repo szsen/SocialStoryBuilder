@@ -8,12 +8,17 @@
 
 #import "ViewController.h"
 #import "Story.h"
+#import "MyTableViewController.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
-@property (weak, nonatomic) IBOutlet UITextField *inputField;
+//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
+//@property (weak, nonatomic) IBOutlet UIImageView *storyImage;
+//@property (weak, nonatomic) IBOutlet UITextField *inputField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLable;
+@property MyTableViewController *myTVC;
+@property NSMutableArray *nameMArray;
+@property NSMutableArray *storyMArray;
 
 @end
 
@@ -30,7 +35,7 @@
 
     //TODO: should be made dynamic to enforce student name/specific story access credentials
     //string for the URL request
-    NSString *myUrlString = @"http://localhost:3000/api/stories";
+    NSString *myUrlString = @"http://localhost:3000/api/students";
     //create a NSURL object from the string data
     NSURL *myUrl = [NSURL URLWithString:myUrlString];
     
@@ -51,7 +56,9 @@
         }
     }]resume];
     
-    [self.navigationItem setTitle:@"Story Detail"];
+    [self.navigationItem setTitle:@"Name Detail"];
+    self.myTVC = [[MyTableViewController alloc] initWithStyle:UITableViewStyleGrouped];
+    self.nameMArray = [[NSMutableArray alloc] init];
 }
 
 - (void) parseResponse: (NSData *) data{
@@ -60,14 +67,39 @@
     NSError *error = nil;
     //parsing the Json response
     jsonObject =[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:&error];
-    if(jsonObject != nil &&error ==nil){
+    if(jsonObject != nil && error ==nil){
         NSLog(@"successfully deserialized...");
     }
     
-    self.titleLabel.text = [jsonObject objectForKey:@"title"];
-    self.captionLabel.text = [jsonObject objectForKey:@"description"];
+    //self.titleLabel.text = [jsonObject objectForKey:@"title"];
+    //self.captionLabel.text = [jsonObject objectForKey:@"description"];
+    //self.captionLabel.text = [jsonObject objectForKey:@"description"];
     //TODO: NSData data with URL call is VERY SLOW--need to run on background thread?   
-    self.storyImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[jsonObject objectForKey:@"url"]]]];
+    //self.storyImage.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[jsonObject objectForKey:@"url"]]]];
+    //self.nameLable.text = [jsonObject objectForKey:@"name"];
+    NSDictionary *dict = [jsonObject objectAtIndex:0];
+    NSString *names = @"";
+    //self.nameLable.text = [dict objectForKey:@"name"];
+    for (int i = 0; i < [jsonObject count]; i++) {
+        dict = [jsonObject objectAtIndex:i];
+        NSString *curr = [dict objectForKey:@"name"];
+        //NSLog(curr);
+        names = [[names stringByAppendingString: curr] stringByAppendingString:@"  "];
+    }
+    NSArray *nameArray = [names componentsSeparatedByString:@"  "];
+    [self.nameMArray addObjectsFromArray:nameArray];
+    //self.nameLable.text = names;
+    //NSLog(@"jso =%lu", (unsigned long)[jsonObject count]);
+    
+    [self.myTVC populateDataWithFirstItems:self.nameMArray];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:self.myTVC];
+    
+    self.myTVC.title = @"Name List";
+    
+    [self presentViewController:navController animated:YES completion:nil];
+    
+    //NSString *instructorString = [[NSUserDefaults standardUserDefaults] objectForKey:@"instructor"];
+    //NSLog(@"instuctor is: %@", instructorString);
     
 }
 
@@ -78,8 +110,10 @@
     //create story object from dictionary data
     Story *story = [[Story alloc] initWithNSDictionary: jsonObject];
     //set the label values from the story object
-    self.titleLabel.text = [[NSString alloc] initWithFormat:@"Title = %@", story.title ];
-    self.captionLabel.text = [NSString stringWithFormat:@"Caption = %@", story.caption] ;
+    //self.titleLabel.text = [[NSString alloc] initWithFormat:@"Title = %@", story.title ];
+    //self.captionLabel.text = [NSString stringWithFormat:@"Caption = %@", story.caption] ;
+    //self.nameLable.text = [NSString stringWithFormat:@"Name = %@", story.name] ;
+    self.nameLable.text = [[NSString alloc] initWithFormat:@"Name = %@", story.name ];
 }
 
 

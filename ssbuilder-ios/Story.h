@@ -10,8 +10,9 @@
 
 @interface Story : NSObject
 
-@property (nonatomic, copy) NSString *title;
-@property (nonatomic, copy) NSString *caption;
+//@property (nonatomic, copy) NSString *title;
+//@property (nonatomic, copy) NSString *caption;
+@property (nonatomic, copy) NSString *name;
 
 -(id)initWithNSDictionary:(NSDictionary *)storyInfo_;
 
