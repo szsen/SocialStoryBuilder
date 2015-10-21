@@ -11,7 +11,7 @@ var db = monk(secrets.db);
 router.get('/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
-	collection.find({},{},function(e,docs){
+	collection.find({},{sort: {title: 1}},function(e,docs){
 		res.render('stories', {
 			"storylist" : docs
 		});
