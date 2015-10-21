@@ -62,7 +62,7 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
         imageSearch.setSearchCompleteCallback(this, searchComplete, null);
 
         // Find me a beautiful car.
-        imageSearch.execute($scope.searchQuery);
+        imageSearch.execute($scope.searchQuery + ' clipart');
         
         // Include the required Google branding
         google.search.Search.getBranding('branding');

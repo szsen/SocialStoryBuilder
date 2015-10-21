@@ -18,14 +18,204 @@ for (var i = 0; i < 6; i++) {
     sPanels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
 }
 
-var stories = [
-    {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
-    {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
-    {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
-    {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
-    {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
-    {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels}
+var stories = 
+[
+    {
+        "title" : "Brushing Your Teeth",
+        "description" : "Description.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://vector-magz.com/wp-content/uploads/2013/08/bathroom-clipart1-300x210.png",
+                "caption" : "Blank caption"
+            },
+            {
+                "url" : "http://makingmountainsblog.files.wordpress.com/2013/07/toothpaste_c.gif",
+                "caption" : "Blank caption"
+            },
+            {
+                "url" : "http://www.clker.com/cliparts/r/d/k/j/0/D/green-toothbrush-md.png",
+                "caption" : "Blank caption"
+            },
+            {
+                "url" : "http://images.clipartpanda.com/kids-teeth-clipart-boy-brush-teeth-clipartbrushing-teeth-clipart-1139236-by-johnny-sajem-royalty-free-rf-tzdgtnao.jpg",
+                "caption" : "Blank caption"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            }
+        ]
+    },
+    {
+        "title" : "Rules for Schools",
+        "description" : "How to act in school.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://www.mypecs.com/ImageServer/ImageService.svc/GetPecsCardImage/60,387",
+                "caption" : "Blank caption"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            }
+        ]
+    },
+    {
+        "title" : "Washing Hands",
+        "description" : "Task analysis for washing hands.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://www.do2learn.com/picturecards/images/imageschedule/faucet_on_l.gif",
+                "caption" : "Turn the water on."
+            },
+            {
+                "url" : "http://turksandcaicosmission.org/do/wp-content/uploads/2013/03/Hand-washing.jpg",
+                "caption" : "Hands wet."
+            },
+            {
+                "url" : "http://4.bp.blogspot.com/-ZJR--Ojcxzg/TqsSTiPmZkI/AAAAAAAAABI/jlkNoDEtpYQ/s1600/SoapBarBubbles.png",
+                "caption" : "Rub hands with soap."
+            },
+            {
+                "url" : "https://upload.wikimedia.org/wikipedia/commons/c/c9/Wash_your_hands.svg",
+                "caption" : "Rinse hands."
+            },
+            {
+                "url" : "http://www.engraversnetwork.com/files/placeholder.jpg",
+                "caption" : "Turn the water off."
+            },
+            {
+                "url" : "http://www.engraversnetwork.com/files/placeholder.jpg",
+                "caption" : "Dry your hands."
+            }
+        ]
+    },
+    {
+        "title" : "Fire Drill",
+        "description" : "What to do in a fire drill.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://vector-magz.com/wp-content/uploads/2013/09/fire-drill-clip-art-300x291.jpg",
+                "caption" : "Blank caption"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            }
+        ]
+    },
+    {
+        "title" : "Meeting New People",
+        "description" : "How to meet new people.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://images.clipartpanda.com/computer-clipart-for-kids-82610_15845_0.gif",
+                "caption" : "Blank caption"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            }
+        ]
+    },
+    {
+        "title" : "Asking Nicely",
+        "description" : "How to ask for something you need.",
+        "url" : "http://placehold.it/320x150",
+        "panels" : [
+            {
+                "url" : "http://www.lessonpix.com/drawings/lori/3947/150x150/Raise%2520Hand.png",
+                "caption" : "Blank caption"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            },
+            {
+                "caption" : "Blank caption",
+                "url" : "http://placehold.it/320x150"
+            }
+        ]
+    }
 ];
+
+// [
+//     {title:"Brushing Your Teeth", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+//     {title:"Dealing with Bullies", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+//     {title:"Playtime", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+//     {title:"Money", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+//     {title:"Meeting New People", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels},
+//     {title:"Asking Nicely", description : "Description.", url : "http://placehold.it/320x150", panels : sPanels}
+// ];
 
 db.stories.insert(stories);
 

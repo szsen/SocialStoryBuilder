@@ -14,9 +14,10 @@ router.get('/stories', function(req, res) {
 	collection.find({},{},function(err,docs){
 		collection = db.get('stories');
 		collection.find({},{},function(e,d){
+			console.log(docs);
 			res.render('stories', {
-				"storylist" : docs, 
-				"studentlist" : d
+				"storylist" : d, 
+				"studentlist" : docs
 			});
 		});
 	});
@@ -37,6 +38,8 @@ router.post('/edit-new-story', function(req, res) {
 		"description" : description,
 		"panels" : panels
 	};
+	console.log('in eidt new story');
+	console.log(newStory);
 	collection.insert(newStory, function (err, doc) {
 		if (err) {
 			// If it failed, return error
@@ -161,6 +164,7 @@ router.get('/api/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){
+		console.log(docs);
 		res.json(docs[docs.length - 1]);
 	});
 });
