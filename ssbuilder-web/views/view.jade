@@ -39,26 +39,27 @@ html(lang='en')
     header#myCarousel.carousel.slide
       // Indicators
       ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
+        each panel, i in story.panels
+          if i==0
+            li.active(data-target='#myCarousel', data-slide-to=i)
+          else
+            li(data-target='#myCarousel', data-slide-to=i)
+
       // Wrapper for Slides
       .carousel-inner
-        .item.active
-          // Set the first background image using inline CSS below.
-          .fill(style="background-image:url('http://placehold.it/1900x1080&text=Slide One');")
-          .carousel-caption
-            h2 #{story.description}
-        .item
-          // Set the second background image using inline CSS below.
-          .fill(style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');")
-          .carousel-caption
-            h2 Caption 2
-        .item
-          // Set the third background image using inline CSS below.
-          .fill(style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');")
-          .carousel-caption
-            h2 Caption 3
+        // Loop to go through the story's panels
+        each panel, i in story.panels
+          if i==0
+            .item.active
+              .fill(style="background-image:url(#{panel.url});")
+              .carousel-caption
+                h2 #{panel.caption}
+          else
+            .item
+              .fill(style="background-image:url(#{panel.url});")
+              .carousel-caption
+                h2 #{panel.caption}
+
       // Controls
       a.left.carousel-control(href='#myCarousel', data-slide='prev')
         span.icon-prev
