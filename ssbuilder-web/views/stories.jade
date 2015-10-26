@@ -13,17 +13,29 @@ block content
     // Custom CSS
     link(href='css/story-list.css', rel='stylesheet')
   body
+    script(type='text/javascript').
+      $(document).on("click", ".openModal", function () {
+        var myStudentName = $(this).data('id');
+        $(".modal-body #studentName").val( myStudentName );
+        $(".modal-body #oldName").val( myStudentName );
+        $(".modal-footer #deleteButton").attr('href', '/delete-student/'+myStudentName)
+      });
     .container
       .row
         .col-md-3
           p.lead Students
           .list-group
-            
             each student, i in studentlist
               if i==0
                 a.list-group-item.active(href='#')= student.name
+                  span.pull-right
+                    button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
+                      span.glyphicon.glyphicon-edit
               else
                 a.list-group-item(href='#')= student.name
+                  span.pull-right
+                    button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
+                      span.glyphicon.glyphicon-edit
         .col-md-9
           p.lead Social Stories
           .row
@@ -40,6 +52,23 @@ block content
                       | &nbsp;
                       | &nbsp;
                       a.btn.btn-default(href='/delete-story/' + story._id) Delete
+      #studentEditModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
+        .modal-dialog(role='document')
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-label='Close')
+                span(aria-hidden='true') ×
+              h4#myModalLabel.modal-title Edit Student
+            .form-area
+              form(role='form', method='post', action='/edit-student')
+                .modal-body
+                  .form-group
+                    input.form-control(type='text', id='studentName' name='studentName', value ="")
+                  .form-group(style='display:none')
+                    input.form-control(type='text', id='oldName' name='oldName', value ="")
+                .modal-footer
+                  a.button.btn.btn-default(type='button', id='deleteButton' href='/delete-student/') Delete
+                  button.btn.btn-primary(type='submit', name='submit') Edit  
     .container
       hr
       // Footer

@@ -29,4 +29,56 @@ router.get('/api/student-story/:name', function(req, res) {
 	});
 });
 
+router.post('/add-student', function(req, res) {
+	var studentName = req.body.studentName;
+	console.log(req);
+	var collection = db.get('students');
+	// Submit to the DB
+	collection.insert({ "name": studentName, stories: [] }, {}, function (err, doc) {
+		if (err) {
+			// If it failed, return error
+			res.send("There was a problem adding the information to the database.");
+		}
+		else {
+			// And forward to success page
+			res.redirect(302, "/stories");
+		}
+	});
+});
+
+router.post('/edit-student', function(req, res) {
+	var oldName = req.body.oldName;
+	var studentName = req.body.studentName;
+	console.log(req);
+	var collection = db.get('students');
+	// Submit to the DB
+	collection.update({ "name": oldName }, { $set: {"name" : studentName}}, function (err, doc) {
+		if (err) {
+			// If it failed, return error
+			res.send("There was a problem adding the information to the database.");
+		}
+		else {
+			// And forward to success page
+			res.redirect(302, "/stories");
+		}
+	});
+});
+
+router.get('/delete-student/:name', function(req, res) {
+	var studentName = req.params.name;
+	console.log(req);
+	var collection = db.get('students');
+	// Submit to the DB
+	collection.remove({ "name": studentName }, {}, function (err, doc) {
+		if (err) {
+			// If it failed, return error
+			res.send("There was a problem adding the information to the database.");
+		}
+		else {
+			// And forward to success page
+			res.redirect(302, "/stories");
+		}
+	});
+});
+
 module.exports = router;
