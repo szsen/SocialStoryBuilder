@@ -12,6 +12,17 @@ html(ng-app='')
     script(src='/js/controllers/EditorCtrl.js')
     script(src='/js/app.js')
   body(ng-app='ssbuilderApp')
+    script(type='text/javascript').
+      $(document).on("click", ".openBoardModal", function () {
+        $.get( "api/students", function( data ) {
+          console.log(data);
+          $(".modal-body #studentDropdown").append(function() {
+            return $.map(data, function(el, i) {
+              return '<option value=' + el._id + '>' + el.name + '</option>';
+            });
+          });
+        });
+      });
     // Navigation
     nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
       .container
@@ -26,7 +37,7 @@ html(ng-app='')
         #bs-example-navbar-collapse-1.collapse.navbar-collapse
           ul.nav.navbar-nav
             li
-              a(href='#' data-toggle='modal', data-target='#myModal') New Board
+              a.openBoardModal(href='#' data-toggle='modal', data-target='#myModal') New Board
             li  
               a(href='#' data-toggle='modal', data-target='#studentModal') New Student
     block content
@@ -42,6 +53,9 @@ html(ng-app='')
               .modal-body
                 .form-group
                   input#name.form-control(type='text', name='storyTitle', placeholder='Title')
+                .form-group
+                  | Assign to student: 
+                  select(id='studentDropdown' name='selectStudent')
                 .form-group
                   textarea#message.form-control(type='textarea', name='descrip', placeholder='Description', rows='7')
                   span.help-block

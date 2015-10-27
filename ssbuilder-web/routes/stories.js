@@ -25,11 +25,10 @@ router.get('/stories', function(req, res) {
 
 /* GET create new story page. */
 router.post('/edit-new-story', function(req, res) {
-	var collection = db.get('stories');
 	var panels = [];
 	var title = req.body.storyTitle;
 	var description = req.body.descrip;
-	console.log(title);
+	var studentId = req.body.selectStudent;
 	for (var i = 0; i < 6; i++) {
 		panels.push({caption: 'Blank caption', url: "http://placehold.it/320x150"});
 	}
@@ -38,17 +37,19 @@ router.post('/edit-new-story', function(req, res) {
 		"description" : description,
 		"panels" : panels
 	};
-	console.log('in eidt new story');
-	console.log(newStory);
+	var collection = db.get('stories');
 	collection.insert(newStory, function (err, doc) {
-		if (err) {
-			// If it failed, return error
-			res.send("There was a problem adding the information to the database.");
-		}
-		else {
-			// And forward to success page
-			res.redirect("/edit-story/"+doc._id);
-		}
+		var collection = db.get('students');
+		collection.update({ _id : studentId },{$push : { stories : doc._id}},function(e,docs){		
+			if (err) {
+				// If it failed, return error
+				res.send("There was a problem adding the information to the database.");
+			}
+			else {
+				// And forward to success page
+				res.redirect("/edit-story/"+doc._id);
+			}
+		});
 	});
 });
 
