@@ -1,0 +1,45 @@
+extends layout
+
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Social Story Builder
+    // Bootstrap Core CSS
+    link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='css/story-list.css', rel='stylesheet')
+  body
+    .container
+      .row
+        .col-md-9
+          p.lead Global Community Boards
+          .row
+            each story, i in storylist
+              .col-sm-4.col-lg-4.col-md-4
+                .thumbnail
+                  img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
+                  .caption(style="text-align:center;")
+                    h4
+                      a(href='view/' + story._id)= story.title
+                    p= story.description
+                    p
+                      a.btn.btn-default(href='#') Preview
+                      | &nbsp;
+                      | &nbsp;
+                      a.btn.btn-default(href='#') Download
+    .container
+      hr
+      // Footer
+      footer
+        .row
+          .col-lg-12
+            p
+    // /.container
+    // jQuery
+    script(src='/libs/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='/libs/bootstrap/dist/js/bootstrap.min.js')

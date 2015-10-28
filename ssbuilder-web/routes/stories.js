@@ -23,6 +23,18 @@ router.get('/stories', function(req, res) {
 	});
 });
 
+/* GET story list page. */
+router.get('/community', function(req, res) {
+	//res.send('respond with a resource');
+	var collection = db.get('stories');
+	collection.find({},{},function(err,docs){
+		console.log(docs);
+		res.render('community', {
+			"storylist" : docs
+		});
+	});
+});
+
 /* GET create new story page. */
 router.post('/edit-new-story', function(req, res) {
 	var panels = [];
@@ -67,6 +79,24 @@ router.get('/edit-story/:storyId', function(req, res) {
 		docs[0].panels = panels;
 		res.render('edit-story', {
 			"story" : docs[0]
+		});
+	});
+});
+
+/* GET copy story page. */
+router.post('/copy-story/:storyId', function(req, res) {
+	var storyId = req.params.storyId;
+	var studentId = req.body.studentCopy;
+
+	var collection = db.get('stories');
+	collection.find({ _id : storyId },{},function(e,docs){
+		var copy = docs[0];
+		delete copy._id;
+		collection.insert(copy, function(err, d) {
+			collection = db.get('students');
+			collection.update({ _id : studentId },{$push : { stories : d._id}},function(e,docs){	
+				res.redirect('/stories');
+			});
 		});
 	});
 });
