@@ -26,7 +26,7 @@ router.get('/stories', function(req, res) {
 /* GET story list page. */
 router.get('/community', function(req, res) {
 	//res.send('respond with a resource');
-	var collection = db.get('stories');
+	var collection = db.get('community');
 	collection.find({},{},function(err,docs){
 		console.log(docs);
 		res.render('community', {
@@ -97,6 +97,21 @@ router.post('/copy-story/:storyId', function(req, res) {
 			collection.update({ _id : studentId },{$push : { stories : d._id}},function(e,docs){	
 				res.redirect('/stories');
 			});
+		});
+	});
+});
+
+/* GET copy story page. */
+router.post('/upload-story/:storyId', function(req, res) {
+	var storyId = req.params.storyId;
+
+	var collection = db.get('stories');
+	collection.find({ _id : storyId },{},function(e,docs){
+		var copy = docs[0];
+		delete copy._id;
+		collection = db.get('community');
+		collection.insert(copy, function(err, d) {
+			res.redirect('/community');
 		});
 	});
 });

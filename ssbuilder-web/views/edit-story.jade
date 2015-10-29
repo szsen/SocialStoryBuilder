@@ -50,6 +50,9 @@ block content
               button.btn.btn-default.openCopyModal(type='button' data-toggle='modal', data-target='#copyModal') Copy
               | &nbsp
               | &nbsp
+              button.btn.btn-default.openCopyModal(type='button' data-toggle='modal', data-target='#uploadModal') Upload
+              | &nbsp
+              | &nbsp
               button#submit.btn.btn-primary(type='submit', name='submit') Done
     #copyModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='copyModal')
       .modal-dialog(role='document')
@@ -67,3 +70,17 @@ block content
               .modal-footer
                 button.btn.btn-default(type='button', data-dismiss='modal') Close
                 button.btn.btn-primary(type='submit', name='submit') Copy
+    #uploadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='copyModal')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#copyModal.modal-title Upload Board to Community
+          .form-area
+            form(role='form', method='post', action='/upload-story/'+story._id)
+              .modal-body
+                p Are you sure? This will make the board public so that others can download it.
+              .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button.btn.btn-primary(type='submit', name='submit') Upload
