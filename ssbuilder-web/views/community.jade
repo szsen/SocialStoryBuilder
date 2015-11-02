@@ -13,6 +13,19 @@ block content
     // Custom CSS
     link(href='css/story-list.css', rel='stylesheet')
   body
+    script(type='text/javascript').
+      $(document).on("click", ".openDownloadModal", function () {
+        var myStudentName = $(this).data('id');
+        $(".modal-body #storyToDownload").val( myStudentName );
+        $.get( "/api/students", function( data ) {
+          console.log(data);
+          $(".modal-body #studentCopy").append(function() {
+            return $.map(data, function(el, i) {
+              return '<option value=' + el._id + '>' + el.name + '</option>';
+            });
+          });
+        });
+      });
     .container
       .row
         .col-md-9
@@ -30,7 +43,25 @@ block content
                       a.btn.btn-default(href='#') Preview
                       | &nbsp;
                       | &nbsp;
-                      a.btn.btn-default(href='#') Download
+                      a.btn.btn-default.openDownloadModal(type='button' data-toggle='modal', data-id='#{story._id}', data-target='#downloadModal') Download
+    #downloadModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='copyModal')
+      .modal-dialog(role='document')
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal', aria-label='Close')
+              span(aria-hidden='true') ×
+            h4#copyModal.modal-title Download Board and Assign to Student
+          .form-area
+            form(role='form', method='post', action='/download-story/')
+              .modal-body
+                .form-group
+                  | Assign to student: 
+                  select(id='studentCopy' name='studentCopy')
+                .form-group(style='display:none')
+                  input.form-control(type='text', id='storyToDownload' name='storyToDownload', value ="")
+              .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+                button.btn.btn-primary(type='submit', name='submit') Copy
     .container
       hr
       // Footer
