@@ -54,10 +54,10 @@ block content
                         a(href='view/' + story._id)= story.title
                       p= story.description
                       p
-                        a.btn.btn-default(href='edit-story/#{story._id}') Edit
+                        a#edit.btn.btn-default(href='edit-story/#{story._id}') Edit
                         | &nbsp;
                         | &nbsp;
-                        a.btn.btn-default(href='/delete-story/' + story._id) Delete
+                        a#delete.btn.btn-default(href='/delete-story/' + story._id) Delete
       #studentEditModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
         .modal-dialog(role='document')
           .modal-content
