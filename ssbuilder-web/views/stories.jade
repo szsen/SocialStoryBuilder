@@ -11,7 +11,7 @@ block content
     // Bootstrap Core CSS
     link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
-    link(href='css/story-list.css', rel='stylesheet')
+    link(href='/css/story-list.css', rel='stylesheet')
   body
     script(type='text/javascript').
       $(document).on("click", ".openModal", function () {
@@ -20,19 +20,24 @@ block content
         $(".modal-body #oldName").val( myStudentName );
         $(".modal-footer #deleteButton").attr('href', '/delete-student/'+myStudentName)
       });
+      $(document).on("click", ".list-group-item", function(e) {
+        console.log('asdfs');
+        $(".list-group-item.active").removeClass("active");
+        $(e.target).addClass("active");
+      });
     .container
       .row
         .col-md-3
           p.lead Students
           .list-group
             each student, i in studentlist
-              if i==0
-                a.list-group-item.active(href='#')= student.name
+              if student.name==currentStudent
+                a.list-group-item.active(href='/stories/#{student._id}')= student.name
                   span.pull-right
                     button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
                       span.glyphicon.glyphicon-edit
               else
-                a.list-group-item(href='#')= student.name
+                a.list-group-item(href='/stories/#{student._id}')= student.name
                   span.pull-right
                     button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
                       span.glyphicon.glyphicon-edit
@@ -40,18 +45,18 @@ block content
           p.lead Social Stories
           .row
             each story, i in storylist
-              .col-sm-4.col-lg-4.col-md-4
-                .thumbnail
-                  img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
-                  .caption(style="text-align:center;")
-                    h4
-                      a(href='view/' + story._id)= story.title
-                    p= story.description
-                    p
-                      a.btn.btn-default(href='edit-story/#{story._id}') Edit
-                      | &nbsp;
-                      | &nbsp;
-                      a.btn.btn-default(href='/delete-story/' + story._id) Delete
+                .col-sm-4.col-lg-4.col-md-4
+                  .thumbnail
+                    img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
+                    .caption(style="text-align:center;")
+                      h4
+                        a(href='view/' + story._id)= story.title
+                      p= story.description
+                      p
+                        a.btn.btn-default(href='edit-story/#{story._id}') Edit
+                        | &nbsp;
+                        | &nbsp;
+                        a.btn.btn-default(href='/delete-story/' + story._id) Delete
       #studentEditModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
         .modal-dialog(role='document')
           .modal-content

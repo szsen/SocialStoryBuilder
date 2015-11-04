@@ -14,7 +14,7 @@ router.get('/stories', function(req, res) {
 	collection.find({},{},function(err,docs){
 		collection = db.get('stories');
 		collection.find({},{sort: {title: 1}},function(e,d){
-			console.log(docs);
+			console.log(d);
 			res.render('stories', {
 				"storylist" : d, 
 				"studentlist" : docs
@@ -61,6 +61,23 @@ router.post('/edit-new-story', function(req, res) {
 				// And forward to success page
 				res.redirect("/edit-story/"+doc._id);
 			}
+		});
+	});
+});
+/* GET student page */
+router.get('/stories/:studentId', function(req, res) {
+	var studentId = req.params.studentId;
+	var collection = db.get('students');
+	collection.find({},{},function(ee,dd){
+		collection.find({_id:studentId},{},function(err,docs){
+			collection = db.get('stories');
+			collection.find({ _id: { $in: docs[0].stories } },{},function(e,d){
+				res.render('stories', {
+				"storylist" : d, 
+				"studentlist" : dd,
+				"currentStudent" : docs[0].name
+				});
+			});
 		});
 	});
 });
