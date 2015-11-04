@@ -11,6 +11,7 @@ html(lang='en')
     link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
     // Custom CSS
     link(href='/css/full-slider.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Short+Stack')
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //if lt IE 9
@@ -70,10 +71,7 @@ html(lang='en')
       .row
         .col-lg-12
           h1 #{story.title}
-          p
-            | The background images for the slider are set directly in the HTML using inline CSS. The rest of the styles for this template are contained within the 
-            code full-slider.css
-            | file.
+          p #{story.description}
       hr
       // Footer
       footer
