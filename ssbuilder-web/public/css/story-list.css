@@ -9,19 +9,21 @@ body {
     font-family: Short Stack;
 }
 
+/*
 a.btn#edit {
     color:white;
-    background: #398525; /* old browsers */
-    background: -moz-linear-gradient(top, #8DD297 0%, #398525 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); /* webkit */
+    background: #398525; /* old browsers 
+    background: -moz-linear-gradient(top, #8DD297 0%, #398525 100%); /* firefox 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8DD297), color-stop(100%,#398525)); 
 }   
 
 a.btn#delete {
     color:white;
-    background: #852539; /* old browsers */
-    background: -moz-linear-gradient(top, #d2978d 0%, #852539 100%); /* firefox */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2978d), color-stop(100%,#852539)); /* webkit */
+    background: #852539; /* old browsers 
+    background: -moz-linear-gradient(top, #d2978d 0%, #852539 100%); /* firefox 
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2978d), color-stop(100%,#852539)); /* webkit 
 } 
+*/
 
 .slide-image {
     width: 100%;
@@ -57,6 +59,7 @@ a.btn#delete {
 
 .thumbnail {
     padding: 0;
+    border-radius: 0px;
 }
 
 .thumbnail .caption-full {
@@ -66,4 +69,8 @@ a.btn#delete {
 
 footer {
     margin: 50px 0;
+}
+
+.btn {
+    border-radius: 0px;
 }

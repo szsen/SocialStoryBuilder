@@ -13,6 +13,7 @@ block content
     link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Short+Stack')
     // Custom CSS
     link(href='/css/story-list.css', rel='stylesheet')
+    link(href='http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css', rel='stylesheet')
   body
     script(type='text/javascript').
       $(document).on("click", ".openModal", function () {
@@ -21,11 +22,11 @@ block content
         $(".modal-body #oldName").val( myStudentName );
         $(".modal-footer #deleteButton").attr('href', '/delete-student/'+myStudentName)
       });
-      $(document).on("click", ".list-group-item", function(e) {
-        console.log('asdfs');
-        $(".list-group-item.active").removeClass("active");
-        $(e.target).addClass("active");
-      });
+      //- $(document).on("click", ".list-group-item", function(e) {
+      //-   console.log('asdfs');
+      //-   $(".list-group-item.active").removeClass("active");
+      //-   $(e.target).addClass("active");
+      //- });
     .container
       .row
         .col-md-3
@@ -33,15 +34,12 @@ block content
           .list-group
             each student, i in studentlist
               if student.name==currentStudent
-                a.list-group-item.active(href='/stories/#{student._id}')= student.name
-                  span.pull-right
-                    button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
-                      span.glyphicon.glyphicon-edit
+                a.list-group-item.active(style='border-radius: 0px;')
+                  | #{student.name} 
+                  i.icon-pencil.pull-right(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
               else
-                a.list-group-item(href='/stories/#{student._id}')= student.name
-                  span.pull-right
-                    button.btn.btn-xs(data-toggle='modal', data-target='#studentEditModal' data-id='#{student.name}' class='openModal')
-                      span.glyphicon.glyphicon-edit
+                a.list-group-item(href='/stories/#{student._id}' style='border-radius: 0px;')
+                  | #{student.name}
         .col-md-9
           p.lead Social Stories
           .row
@@ -52,12 +50,11 @@ block content
                     .caption(style="text-align:center;")
                       h4
                         a(href='view/' + story._id)= story.title
-                      p= story.description
                       p
-                        a#edit.btn.btn-default(href='edit-story/#{story._id}') Edit
+                        a#edit.btn.btn-primary(href='edit-story/#{story._id}') Edit
                         | &nbsp;
                         | &nbsp;
-                        a#delete.btn.btn-default(href='/delete-story/' + story._id) Delete
+                        a#delete.btn.btn-danger(href='/delete-story/' + story._id) Delete
       #studentEditModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
         .modal-dialog(role='document')
           .modal-content

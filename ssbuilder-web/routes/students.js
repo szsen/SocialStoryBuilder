@@ -52,14 +52,14 @@ router.post('/edit-student', function(req, res) {
 	console.log(req);
 	var collection = db.get('students');
 	// Submit to the DB
-	collection.update({ "name": oldName }, { $set: {"name" : studentName}}, function (err, doc) {
+	collection.findAndModify({ "name": oldName }, { $set: {"name" : studentName}}, function (err, doc) {
 		if (err) {
 			// If it failed, return error
 			res.send("There was a problem adding the information to the database.");
 		}
 		else {
 			// And forward to success page
-			res.redirect(302, "/stories");
+			res.redirect(302, "/stories/"+doc._id);
 		}
 	});
 });
