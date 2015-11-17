@@ -8,6 +8,11 @@ var secrets = require('../config/secrets');
 var db = monk(secrets.db);
 
 /* GET story list page. */
+router.get('/', function(req, res) {
+	res.redirect('/stories');
+});
+
+/* GET story list page. */
 router.get('/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('students');
@@ -18,6 +23,24 @@ router.get('/stories', function(req, res) {
 			res.render('stories', {
 				"storylist" : d, 
 				"studentlist" : docs
+			});
+		});
+	});
+});
+
+/* GET student page */
+router.get('/stories/:studentId', function(req, res) {
+	var studentId = req.params.studentId;
+	var collection = db.get('students');
+	collection.find({},{},function(ee,dd){
+		collection.find({_id:studentId},{},function(err,docs){
+			collection = db.get('stories');
+			collection.find({ _id: { $in: docs[0].stories } },{},function(e,d){
+				res.render('stories', {
+				"storylist" : d, 
+				"studentlist" : dd,
+				"currentStudent" : docs[0].name
+				});
 			});
 		});
 	});
@@ -64,23 +87,7 @@ router.post('/edit-new-story', function(req, res) {
 		});
 	});
 });
-/* GET student page */
-router.get('/stories/:studentId', function(req, res) {
-	var studentId = req.params.studentId;
-	var collection = db.get('students');
-	collection.find({},{},function(ee,dd){
-		collection.find({_id:studentId},{},function(err,docs){
-			collection = db.get('stories');
-			collection.find({ _id: { $in: docs[0].stories } },{},function(e,d){
-				res.render('stories', {
-				"storylist" : d, 
-				"studentlist" : dd,
-				"currentStudent" : docs[0].name
-				});
-			});
-		});
-	});
-});
+
 
 /* GET edit story page. */
 router.get('/edit-story/:storyId', function(req, res) {
