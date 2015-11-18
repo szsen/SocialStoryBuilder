@@ -26,14 +26,53 @@ class SocialStoryBuilderTests: XCTestCase {
         XCTAssert(true, "pass")
     }
     
-    func testPerformanceExample() {
+    func testJPGImagePerformanceExample() {
         // This is an example of a performance test case.
         self.measureBlock {
             // Put the code you want to measure the time of here.
-            let studentURL = "
-            if let url = NSURL(string: panels[0]["url"].stringValue) {
+            let studentURL = "http://vector-magz.com/wp-content/uploads/2013/09/fire-drill-clip-art-300x291.jpg"
+            if let url = NSURL(string: studentURL) {
                 if let data = NSData(contentsOfURL: url) {
-                    cell.imageView.image = UIImage(data: data)
+                    let image = UIImage(data: data)
+                }
+            }
+        }
+    }
+    
+    func testPNGImagePerformanceExample() {
+        // This is an example of a performance test case.
+        self.measureBlock {
+            // Put the code you want to measure the time of here.
+            let studentURL = "http://www.lessonpix.com/drawings/lori/3947/150x150/Raise%2520Hand.png"
+            if let url = NSURL(string: studentURL) {
+                if let data = NSData(contentsOfURL: url) {
+                    let image = UIImage(data: data)
+                }
+            }
+        }
+    }
+    
+    func testGIFImagePerformanceExample() {
+        // This is an example of a performance test case.
+        self.measureBlock {
+            // Put the code you want to measure the time of here.
+            let studentURL = "http://images.clipartpanda.com/computer-clipart-for-kids-82610_15845_0.gif"
+            if let url = NSURL(string: studentURL) {
+                if let data = NSData(contentsOfURL: url) {
+                    let image = UIImage(data: data)
+                }
+            }
+        }
+    }
+    
+    func testNoFileTypeImagePerformanceExample() {
+        // This is an example of a performance test case.
+        self.measureBlock {
+            // Put the code you want to measure the time of here.
+            let studentURL = "http://placehold.it/320x150"
+            if let url = NSURL(string: studentURL) {
+                if let data = NSData(contentsOfURL: url) {
+                    let image = UIImage(data: data)
                 }
             }
         }
