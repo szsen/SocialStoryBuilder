@@ -21,6 +21,7 @@ class StoriesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = studentName!.stringByAppendingString("'s Stories")
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -106,13 +107,12 @@ class StoriesCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
+        
         if jsonData != nil{
             return jsonData!.count
         }
@@ -125,9 +125,8 @@ class StoriesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! StoryCollectionViewCell
         
         // Configure the cell
-        cell.backgroundColor = UIColor.blackColor()
+        cell.backgroundColor = UIColor.darkGrayColor()
         if jsonData != nil{
-            //cell.storyTitleLabel.text = jsonData![indexPath.row]["title"].stringValue
             cell.storyTitleLabel.text = storyTitles[indexPath.row]
             
             cell.imageView.image = storyImages[indexPath.row]
@@ -142,6 +141,7 @@ class StoriesCollectionViewController: UICollectionViewController {
         print("selected something at ", indexPath.row)
         
         let storyImagesVC = self.storyboard!.instantiateViewControllerWithIdentifier("StoryImageVC") as! StoryImageViewController
+        storyImagesVC.storyTitle = storyTitles[indexPath.row]
         storyImagesVC.panels = jsonData![indexPath.row]["panels"]
         self.navigationController?.pushViewController(storyImagesVC, animated: true)
     }
