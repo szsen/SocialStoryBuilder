@@ -91,6 +91,7 @@ router.post('/edit-new-story', function(req, res) {
 
 /* GET edit story page. */
 router.get('/edit-story/:storyId', function(req, res) {
+	console.log('asdfasdfadsfaf');
 	var storyId = req.params.storyId;
 	var collection = db.get('stories');
 	collection.find({ _id : storyId },{},function(e,docs){
@@ -173,6 +174,7 @@ router.get('/edit-panel/:storyId/:ind', function(req, res) {
 		}
 		panel._id = storyId;
 		panel.ind = index;
+		console.log(panel);
 		res.render('edit-panel', {
 			"panel" : JSON.stringify(panel)
 		});

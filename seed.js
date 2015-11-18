@@ -100,7 +100,7 @@ var stories =
                 "caption" : "Rub hands with soap."
             },
             {
-                "url" : "https://upload.wikimedia.org/wikipedia/commons/c/c9/Wash_your_hands.svg",
+                "url" : "http://www.clipartbest.com/cliparts/Rcd/nbX/RcdnbXzc9.png",
                 "caption" : "Rinse hands."
             },
             {

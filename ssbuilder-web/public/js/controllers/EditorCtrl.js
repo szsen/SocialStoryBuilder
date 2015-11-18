@@ -1,7 +1,7 @@
 /*jshint loopfunc: true */
 //editor controller
 angular.module('EditorCtrl', []).controller('EditorController', function($scope, $document, $attrs) {
-	var imageSearch;
+  var imageSearch;
   console.log('paneldata');
   var paneldata = JSON.parse($attrs.paneldata);
   $scope.formUrl = "/update-panel/"+ paneldata._id + "/"+ paneldata.ind;
@@ -9,14 +9,14 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
   $scope.image = paneldata.url;
   console.log($scope.ind);
 
-	function addImage(imgUrl) {
-		var input = document.getElementById('subject');
+  function addImage(imgUrl) {
+    var input = document.getElementById('subject');
     input.value = imgUrl;
     var img = document.getElementById('imgSrc');
     img.src = imgUrl;
-	}
+  }
 
-	function searchComplete() {
+  function searchComplete() {
         // Check that we got results
         if (imageSearch.results && imageSearch.results.length > 0) {
 
@@ -53,7 +53,7 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
       }
 
       $scope.search = function() {
-		console.log('in search');
+    console.log('in search');
         // Create an Image Search instance.
         imageSearch = new google.search.ImageSearch();
         imageSearch.setResultSetSize(8);
@@ -66,17 +66,17 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
         
         // Include the required Google branding
         google.search.Search.getBranding('branding');
-	};
+  };
 
-	setTimeout(function(){
-		google.load('search', '1', {'callback':''});
-	}, 1000);
+  setTimeout(function(){
+    google.load('search', '1', {'callback':''});
+  }, 1000);
 
 })
 .directive('editor', function() {
-	return {
-		controller: 'EditorController',
-		restrict: 'E',
-		templateUrl: '/templates/editor.html'
-	};
+  return {
+    controller: 'EditorController',
+    restrict: 'E',
+    templateUrl: '/templates/editor.html'
+  };
 });

@@ -43,7 +43,6 @@ html(ng-app='')
               a.openBoardModal(href='#' data-toggle='modal', data-target='#myModal') New Board
             li  
               a(href='#' data-toggle='modal', data-target='#studentModal') New Student
-    block content
     #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel')
       .modal-dialog(role='document')
         .modal-content
@@ -80,7 +79,7 @@ html(ng-app='')
               .modal-footer
                 button.btn.btn-default(type='button', data-dismiss='modal') Close
                 button.btn.btn-primary(type='submit', name='submit') Add
-
+    block content
     .container
       hr
       // Footer

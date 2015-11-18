@@ -39,9 +39,8 @@ block content
                   .caption(style="text-align:center;")
                     h4
                       a(href='view/' + story._id)= story.title
-                    p= story.description
                     p
-                      a.btn.btn-default(href='#') Preview
+                      a.btn.btn-default(href='#') View
                       | &nbsp;
                       | &nbsp;
                       a.btn.btn-default.openDownloadModal(type='button' data-toggle='modal', data-id='#{story._id}', data-target='#downloadModal') Download
