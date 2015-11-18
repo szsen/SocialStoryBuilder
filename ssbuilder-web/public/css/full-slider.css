@@ -21,11 +21,11 @@ body {
 }
 
 .carousel-caption {
-    /*
-    background-color: rgba(0,0,0,0.5); opaque black box behind
+    
+    background-color: rgba(0,0,0,0.5); /*opaque black box behind*/
     color: #3f62a1; dark, pastel blue
-    text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87; neon red shadow
-    */
+    text-shadow: 0 0 0.2em #F87, 0 0 0.2em #F87; /*neon red shadow*/
+    
     color: white; 
     text-shadow: black 0.1em 0.1em 0.2em;
 }

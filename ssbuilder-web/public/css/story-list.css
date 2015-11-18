@@ -38,9 +38,14 @@ a.btn#delete {
     border-radius: 4px;
 }
 
+.carousel-caption{
+    background-color: black;
+}
+
 .caption {
     height: 130px;
     overflow: hidden;
+    
 }
 
 .caption h4 {
