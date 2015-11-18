@@ -23,7 +23,18 @@
 		AB6186661BF78DEE00940CC6 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186651BF78DEE00940CC6 /* StoryCollectionViewCell.swift */; };
 		AB6186681BF948C000940CC6 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186671BF948C000940CC6 /* Story.swift */; };
 		AB61866A1BF97EAF00940CC6 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186691BF97EAF00940CC6 /* SwiftyJSON.swift */; };
+		AB6186821BFC3BAC00940CC6 /* SocialStoryBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186811BFC3BAC00940CC6 /* SocialStoryBuilderTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AB6186841BFC3BAC00940CC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB1A52661BF54145002FCFF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB1A526D1BF54145002FCFF8;
+			remoteInfo = SocialStoryBuilder;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AB1A526E1BF54145002FCFF8 /* SocialStoryBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialStoryBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +55,20 @@
 		AB6186651BF78DEE00940CC6 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB6186671BF948C000940CC6 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		AB6186691BF97EAF00940CC6 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		AB61867F1BFC3BAC00940CC6 /* SocialStoryBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialStoryBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6186811BFC3BAC00940CC6 /* SocialStoryBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialStoryBuilderTests.swift; sourceTree = "<group>"; };
+		AB6186831BFC3BAC00940CC6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		AB1A526B1BF54145002FCFF8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB61867C1BFC3BAC00940CC6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1A52701BF54145002FCFF8 /* SocialStoryBuilder */,
+				AB6186801BFC3BAC00940CC6 /* SocialStoryBuilderTests */,
 				AB1A526F1BF54145002FCFF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				AB1A526E1BF54145002FCFF8 /* SocialStoryBuilder.app */,
+				AB61867F1BFC3BAC00940CC6 /* SocialStoryBuilderTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,6 +128,15 @@
 			name = Pics;
 			sourceTree = "<group>";
 		};
+		AB6186801BFC3BAC00940CC6 /* SocialStoryBuilderTests */ = {
+			isa = PBXGroup;
+			children = (
+				AB6186811BFC3BAC00940CC6 /* SocialStoryBuilderTests.swift */,
+				AB6186831BFC3BAC00940CC6 /* Info.plist */,
+			);
+			path = SocialStoryBuilderTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -125,6 +157,24 @@
 			productReference = AB1A526E1BF54145002FCFF8 /* SocialStoryBuilder.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AB61867E1BFC3BAC00940CC6 /* SocialStoryBuilderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB6186861BFC3BAC00940CC6 /* Build configuration list for PBXNativeTarget "SocialStoryBuilderTests" */;
+			buildPhases = (
+				AB61867B1BFC3BAC00940CC6 /* Sources */,
+				AB61867C1BFC3BAC00940CC6 /* Frameworks */,
+				AB61867D1BFC3BAC00940CC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB6186851BFC3BAC00940CC6 /* PBXTargetDependency */,
+			);
+			name = SocialStoryBuilderTests;
+			productName = SocialStoryBuilderTests;
+			productReference = AB61867F1BFC3BAC00940CC6 /* SocialStoryBuilderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -138,6 +188,11 @@
 					AB1A526D1BF54145002FCFF8 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = RMB83YZHH2;
+					};
+					AB61867E1BFC3BAC00940CC6 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = RMB83YZHH2;
+						TestTargetID = AB1A526D1BF54145002FCFF8;
 					};
 				};
 			};
@@ -155,6 +210,7 @@
 			projectRoot = "";
 			targets = (
 				AB1A526D1BF54145002FCFF8 /* SocialStoryBuilder */,
+				AB61867E1BFC3BAC00940CC6 /* SocialStoryBuilderTests */,
 			);
 		};
 /* End PBXProject section */
@@ -172,6 +228,13 @@
 				AB1A528F1BF58366002FCFF8 /* teddylay.jpg in Resources */,
 				AB1A52771BF54145002FCFF8 /* Main.storyboard in Resources */,
 				AB1A52951BF5A54F002FCFF8 /* teddycab.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB61867D1BFC3BAC00940CC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +256,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB61867B1BFC3BAC00940CC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB6186821BFC3BAC00940CC6 /* SocialStoryBuilderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AB6186851BFC3BAC00940CC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB1A526D1BF54145002FCFF8 /* SocialStoryBuilder */;
+			targetProxy = AB6186841BFC3BAC00940CC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AB1A52751BF54145002FCFF8 /* Main.storyboard */ = {
@@ -320,6 +399,30 @@
 			};
 			name = Release;
 		};
+		AB6186871BFC3BAC00940CC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialStoryBuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialStoryBuilder.app/SocialStoryBuilder";
+			};
+			name = Debug;
+		};
+		AB6186881BFC3BAC00940CC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SocialStoryBuilderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocialStoryBuilder.app/SocialStoryBuilder";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -340,6 +443,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AB6186861BFC3BAC00940CC6 /* Build configuration list for PBXNativeTarget "SocialStoryBuilderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB6186871BFC3BAC00940CC6 /* Debug */,
+				AB6186881BFC3BAC00940CC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -92,6 +92,12 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" id="rcb-cb-PxO">
+                            <rect key="frame" x="366" y="429" width="37" height="37"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <animations/>
+                            <color key="color" red="1" green="0.96863102305566529" blue="0.29087392551410884" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StoryCell" id="ph6-WK-645" customClass="StoryCollectionViewCell" customModule="SocialStoryBuilder" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="64" width="200" height="200"/>
@@ -131,6 +137,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" id="hc5-YW-mqZ"/>
                     <connections>
+                        <outlet property="loadingIndicator" destination="rcb-cb-PxO" id="clK-AM-FK4"/>
                         <segue destination="pzk-21-QJO" kind="push" id="rUk-JF-jYV"/>
                     </connections>
                 </collectionViewController>
