@@ -10,6 +10,7 @@ var db = monk(secrets.db);
 /* GET story list page. */
 router.get('/', function(req, res) {
 	res.redirect('/stories');
+	//res.render('login');
 });
 
 /* GET story list page. */
