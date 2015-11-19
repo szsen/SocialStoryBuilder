@@ -53,8 +53,6 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
             }
             pageImages.append(currImage!)
             
-            
-            
             //Get caption
             var currCaption = panel.1["caption"].stringValue
             pageCaptions.append(currCaption)
