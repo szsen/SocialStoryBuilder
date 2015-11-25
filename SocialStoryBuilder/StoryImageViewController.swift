@@ -20,24 +20,16 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     var pageViews: [UIImageView?] = []
     
     var panels: JSON? // set by StoryCollectionView
+    var storyTitle: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.title = storyTitle
+        
         scrollView.delegate = self
 
         // 1
-//        pageImages = [UIImage(named: "teddyrec.jpg")!,
-//            UIImage(named: "teddymon.jpg")!,
-//            UIImage(named: "teddylay.jpg")!,
-//            UIImage(named: "teddylin.jpg")!,
-//            UIImage(named: "teddycab.jpg")!]
-//        
-//        pageCaptions = ["Teddy at the recording studio",
-//            "Teddy at the Washington Monument",
-//            "Teddy laying down",
-//            "Teddy at the Lincoln Memorial",
-//            "Teddy with his cabin"]
         
         //Go through the panels to get the images and the captions
         for panel in panels! {
@@ -46,7 +38,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
 
             print("panel:", panel.1)
             if let url = NSURL(string: panel.1["url"].stringValue) {
-           // if let url = NSURL(string: "https:\/\/upload.wikimedia.org\/wikipedia\/commons/c/c9/Wash_your_hands.svg")
+           // if let url = NSURL(string: "https:\/\/upload.wikimedia.org\/wikipedia\/commons/c/c9/Wash_your_hands.svg") THIS CRASHES
                 if let data = NSData(contentsOfURL: url) {
                     currImage = UIImage(data: data)
                 }
@@ -56,7 +48,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
             
             
             //Get caption
-            var currCaption = panel.1["caption"].stringValue
+            let currCaption = panel.1["caption"].stringValue
             pageCaptions.append(currCaption)
             
         }
@@ -89,7 +81,6 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func loadPage(page: Int) {
-        print("loading page")
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             return
@@ -103,6 +94,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
             var frame = scrollView.bounds
             frame.origin.x = frame.size.width * CGFloat(page)
             frame.origin.y = 0.0
+            print(frame.origin.y)
             
             // 3
             let newPageView = UIImageView(image: pageImages[page])
@@ -116,7 +108,6 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func purgePage(page: Int) {
-        print("purging pages")
         if page < 0 || page >= pageImages.count {
             // If it's outside the range of what you have to display, then do nothing
             return
@@ -130,7 +121,6 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func loadVisiblePages() {
-        print("loading visible pages")
         // First, determine which page is currently visible
         let pageWidth = scrollView.frame.size.width
         let page = Int(floor((scrollView.contentOffset.x * 2.0 + pageWidth) / (pageWidth * 2.0)))
@@ -162,7 +152,6 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView!) {
-        print("scrolling")
         // Load the pages that are now on screen
         loadVisiblePages()
     }

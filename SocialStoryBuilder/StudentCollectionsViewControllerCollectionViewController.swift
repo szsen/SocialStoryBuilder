@@ -95,7 +95,7 @@ class StudentCollectionsViewControllerCollectionViewController: UICollectionView
     
         // Configure the cell
         
-        cell.backgroundColor = UIColor.blackColor()
+        cell.backgroundColor = UIColor.darkGrayColor()
         if jsonData != nil {
             cell.nameLabel.text = jsonData![indexPath.row]["name"].stringValue
         }
@@ -110,6 +110,7 @@ class StudentCollectionsViewControllerCollectionViewController: UICollectionView
             print(jsonData![indexPath.row]["name"])
             storyCVC.studentName = jsonData![indexPath.row]["name"].stringValue
         }
+        
         
         self.navigationController?.pushViewController(storyCVC, animated: true)
     }
