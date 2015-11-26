@@ -143,6 +143,7 @@ class StoriesCollectionViewController: UICollectionViewController {
         print("selected something at ", indexPath.row)
         
         let storyImagesVC = self.storyboard!.instantiateViewControllerWithIdentifier("StoryImageVC") as! StoryImageViewController
+        storyImagesVC.studentName = studentName as String!
         storyImagesVC.storyTitle = storyTitles[indexPath.row]
         storyImagesVC.panels = jsonData![indexPath.row]["panels"]
         self.navigationController?.pushViewController(storyImagesVC, animated: true)
