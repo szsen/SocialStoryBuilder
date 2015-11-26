@@ -22,6 +22,10 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     var panels: JSON? // set by StoryCollectionView
     var storyTitle: String?
     
+    var startTime = NSDate.timeIntervalSinceReferenceDate()
+    var currentPage = 0
+    var timePerPanel = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +77,13 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         
         // 5
         loadVisiblePages()
+    }
+    
+    override func viewWillDisappear(animated: Bool){
+        super.viewWillDisappear(animated)
+        print("about to disappear!")
+        
+        //Saving time to Parse
     }
 
     override func didReceiveMemoryWarning() {
@@ -128,6 +139,16 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         // Update the page control
         pageControl.currentPage = page
         
+        //Time update to see time spendage on each panel
+        if (page != currentPage){
+            let currentTime = NSDate.timeIntervalSinceReferenceDate()
+            let elapsedTime : NSTimeInterval = currentTime - startTime
+            let seconds = elapsedTime
+            
+            timePerPanel[currentPage] += seconds
+            startTime = currentTime
+            currentPage = page
+        }
         
         captionLabel.text = pageCaptions[page]
         
@@ -154,6 +175,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView!) {
         // Load the pages that are now on screen
         loadVisiblePages()
+        
     }
 
     /*
