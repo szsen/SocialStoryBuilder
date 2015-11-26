@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -20,6 +21,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     var pageViews: [UIImageView?] = []
     
     var panels: JSON? // set by StoryCollectionView
+    var studentName: String?
     var storyTitle: String?
     
     var startTime = NSDate.timeIntervalSinceReferenceDate()
@@ -83,7 +85,37 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         super.viewWillDisappear(animated)
         print("about to disappear!")
         
+        let currentTime = NSDate.timeIntervalSinceReferenceDate()
+        let elapsedTime : NSTimeInterval = currentTime - startTime
+        let seconds = elapsedTime
+        
+        timePerPanel[currentPage] += seconds
+        
         //Saving time to Parse
+        let testObject = PFObject(className: "TestObject")
+        testObject["foo"] = "bar"
+        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+            print("Object has been saved.")
+        }
+        
+        let studentTimeObject = PFObject(className: "StoryRead")
+        studentTimeObject["student"] = studentName
+        studentTimeObject["story"] = storyTitle
+        
+        studentTimeObject["panelTime1"] = timePerPanel[0]
+        studentTimeObject["panelTime2"] = timePerPanel[1]
+        studentTimeObject["panelTime3"] = timePerPanel[2]
+        studentTimeObject["panelTime4"] = timePerPanel[3]
+        studentTimeObject["panelTime5"] = timePerPanel[4]
+        studentTimeObject["panelTime6"] = timePerPanel[5]
+        
+        let sum = timePerPanel.reduce(0, combine: +)
+        studentTimeObject["totalTime"] = sum
+        
+        studentTimeObject.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            print("student time object saved")
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -27,6 +27,18 @@
 		AB61868A1BFCF56300940CC6 /* ShortStack-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB6186891BFCF56200940CC6 /* ShortStack-Regular.ttf */; };
 		AB61868C1BFCF89400940CC6 /* SocialStoryBuilderLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = AB61868B1BFCF89400940CC6 /* SocialStoryBuilderLogo.png */; };
 		ABF72C0E1C067C7800B6A5EE /* SwiftJSONTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF72C0D1C067C7800B6A5EE /* SwiftJSONTest.swift */; };
+		ABF72C111C06C85600B6A5EE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C0F1C06C85600B6A5EE /* Bolts.framework */; };
+		ABF72C121C06C85600B6A5EE /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C101C06C85600B6A5EE /* Parse.framework */; };
+		ABF72C1D1C06C8C800B6A5EE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C131C06C8C800B6A5EE /* AudioToolbox.framework */; };
+		ABF72C1E1C06C8C800B6A5EE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C141C06C8C800B6A5EE /* CFNetwork.framework */; };
+		ABF72C1F1C06C8C800B6A5EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C151C06C8C800B6A5EE /* CoreGraphics.framework */; };
+		ABF72C201C06C8C800B6A5EE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C161C06C8C800B6A5EE /* CoreLocation.framework */; };
+		ABF72C211C06C8C800B6A5EE /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C171C06C8C800B6A5EE /* libsqlite3.tbd */; };
+		ABF72C221C06C8C800B6A5EE /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C181C06C8C800B6A5EE /* libz.tbd */; };
+		ABF72C231C06C8C800B6A5EE /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C191C06C8C800B6A5EE /* QuartzCore.framework */; };
+		ABF72C241C06C8C800B6A5EE /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C1A1C06C8C800B6A5EE /* Security.framework */; };
+		ABF72C251C06C8C800B6A5EE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C1B1C06C8C800B6A5EE /* StoreKit.framework */; };
+		ABF72C261C06C8C800B6A5EE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABF72C1C1C06C8C800B6A5EE /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +76,18 @@
 		AB6186891BFCF56200940CC6 /* ShortStack-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ShortStack-Regular.ttf"; sourceTree = "<group>"; };
 		AB61868B1BFCF89400940CC6 /* SocialStoryBuilderLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SocialStoryBuilderLogo.png; sourceTree = "<group>"; };
 		ABF72C0D1C067C7800B6A5EE /* SwiftJSONTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftJSONTest.swift; sourceTree = "<group>"; };
+		ABF72C0F1C06C85600B6A5EE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = ../Bolts.framework; sourceTree = "<group>"; };
+		ABF72C101C06C85600B6A5EE /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../Parse.framework; sourceTree = "<group>"; };
+		ABF72C131C06C8C800B6A5EE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		ABF72C141C06C8C800B6A5EE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		ABF72C151C06C8C800B6A5EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		ABF72C161C06C8C800B6A5EE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		ABF72C171C06C8C800B6A5EE /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		ABF72C181C06C8C800B6A5EE /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		ABF72C191C06C8C800B6A5EE /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		ABF72C1A1C06C8C800B6A5EE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ABF72C1B1C06C8C800B6A5EE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ABF72C1C1C06C8C800B6A5EE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +95,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF72C1D1C06C8C800B6A5EE /* AudioToolbox.framework in Frameworks */,
+				ABF72C1E1C06C8C800B6A5EE /* CFNetwork.framework in Frameworks */,
+				ABF72C1F1C06C8C800B6A5EE /* CoreGraphics.framework in Frameworks */,
+				ABF72C201C06C8C800B6A5EE /* CoreLocation.framework in Frameworks */,
+				ABF72C211C06C8C800B6A5EE /* libsqlite3.tbd in Frameworks */,
+				ABF72C221C06C8C800B6A5EE /* libz.tbd in Frameworks */,
+				ABF72C231C06C8C800B6A5EE /* QuartzCore.framework in Frameworks */,
+				ABF72C241C06C8C800B6A5EE /* Security.framework in Frameworks */,
+				ABF72C251C06C8C800B6A5EE /* StoreKit.framework in Frameworks */,
+				ABF72C261C06C8C800B6A5EE /* SystemConfiguration.framework in Frameworks */,
+				ABF72C121C06C85600B6A5EE /* Parse.framework in Frameworks */,
+				ABF72C111C06C85600B6A5EE /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +161,18 @@
 		AB1A52891BF58305002FCFF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ABF72C131C06C8C800B6A5EE /* AudioToolbox.framework */,
+				ABF72C141C06C8C800B6A5EE /* CFNetwork.framework */,
+				ABF72C151C06C8C800B6A5EE /* CoreGraphics.framework */,
+				ABF72C161C06C8C800B6A5EE /* CoreLocation.framework */,
+				ABF72C171C06C8C800B6A5EE /* libsqlite3.tbd */,
+				ABF72C181C06C8C800B6A5EE /* libz.tbd */,
+				ABF72C191C06C8C800B6A5EE /* QuartzCore.framework */,
+				ABF72C1A1C06C8C800B6A5EE /* Security.framework */,
+				ABF72C1B1C06C8C800B6A5EE /* StoreKit.framework */,
+				ABF72C1C1C06C8C800B6A5EE /* SystemConfiguration.framework */,
+				ABF72C0F1C06C85600B6A5EE /* Bolts.framework */,
+				ABF72C101C06C85600B6A5EE /* Parse.framework */,
 				AB61868B1BFCF89400940CC6 /* SocialStoryBuilderLogo.png */,
 				AB6186891BFCF56200940CC6 /* ShortStack-Regular.ttf */,
 				AB1A528A1BF58340002FCFF8 /* teddyrec.jpg */,
@@ -393,6 +441,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialStoryBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilder;
@@ -404,6 +456,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SocialStoryBuilder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilder;
