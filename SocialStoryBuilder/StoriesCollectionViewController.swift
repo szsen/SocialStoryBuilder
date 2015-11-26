@@ -65,6 +65,8 @@ class StoriesCollectionViewController: UICollectionViewController {
         for story in jsonData! {
             //Get the image from URL
             var currImage = UIImage(named: "teddyrec.jpg")
+            print("here:")
+            print (story.1["panels"].count)
             
             print(story.1["panels"][0]["url"])
             
