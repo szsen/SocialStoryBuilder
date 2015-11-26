@@ -82,7 +82,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDG-KZ-n7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1181" y="575"/>
+            <point key="canvasLocation" x="1297" y="657"/>
         </scene>
         <!--StoriesCollectionViewController-->
         <scene sceneID="Q0e-y9-oJC">
@@ -150,7 +150,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rzq-ZQ-YYI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="575"/>
+            <point key="canvasLocation" x="2159" y="569"/>
         </scene>
         <!--Story Image View Controller-->
         <scene sceneID="uq4-ra-gzA">

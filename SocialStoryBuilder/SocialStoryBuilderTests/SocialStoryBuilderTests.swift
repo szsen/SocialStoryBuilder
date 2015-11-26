@@ -78,4 +78,74 @@ class SocialStoryBuilderTests: XCTestCase {
         }
     }
     
+    func testStoryRetrieval(){
+        let studentName = "Roger Chen"
+        
+        let nameURL = studentName.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        
+        let studentStoryUrlString = "http://localhost:3000/api/student-story/".stringByAppendingString(nameURL)
+        let studentStoryUrl = NSURL(string: studentStoryUrlString)
+        
+        let urlSession = NSURLSession.sharedSession()
+        urlSession.dataTaskWithURL(studentStoryUrl!, completionHandler: { (data, response, error) -> Void in
+            XCTAssertNotNil(data, "data should not be nil")
+            XCTAssertNil(error, "error should be nil")
+            
+            if (data?.length > 0 && error == nil){
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    let jsonData = JSON(data: data!)
+                    for story in jsonData{
+                        //Make sure there is a story that is received
+                        XCTAssertNotNil(story, "story should not be nil")
+                    }
+                }
+                
+            }
+            else if (data?.length == 0 && error == nil){
+                print("Empty response")
+            }
+            else if (error != nil){
+                print("there was an error", error)
+            }
+        }).resume()
+        
+    }
+    
+    func testSixPanelsRetrieved(){
+        let studentName = "Roger Chen"
+        
+        let nameURL = studentName.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+        
+        let studentStoryUrlString = "http://localhost:3000/api/student-story/".stringByAppendingString(nameURL)
+        let studentStoryUrl = NSURL(string: studentStoryUrlString)
+        
+        let urlSession = NSURLSession.sharedSession()
+        urlSession.dataTaskWithURL(studentStoryUrl!, completionHandler: { (data, response, error) -> Void in
+            XCTAssertNotNil(data, "data should not be nil")
+            XCTAssertNil(error, "error should be nil")
+            
+            if (data?.length > 0 && error == nil){
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    let jsonData = JSON(data: data!)
+                    for story in jsonData{
+                        //Make sure there is a story that is received
+                        XCTAssertNotNil(story, "story should not be nil")
+                        XCTAssertEqual(story.1["panels"].count, 6)
+                    }
+                }
+                
+            }
+            else if (data?.length == 0 && error == nil){
+                print("Empty response")
+            }
+            else if (error != nil){
+                print("there was an error", error)
+            }
+        }).resume()
+        
+    }
+    
+    
 }
