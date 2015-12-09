@@ -51,4 +51,8 @@ class SocialStoryBuilderUITests: XCTestCase {
         
     }
     
+    func testTimer(){
+        //Make sure timer value for at least slide 1 and totalTime is greater than 0
+    }
+    
 }
