@@ -49,7 +49,7 @@ block content
                     img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
                     .caption(style="text-align:center;")
                       h4
-                        a(href='view/' + story._id)= story.title
+                        a(href='/view/' + story._id)= story.title
                       p
                         a#edit.btn.btn-primary(href='/edit-story/#{story._id}') Edit
                         | &nbsp;

@@ -12,14 +12,25 @@ var db = monk(secrets.db);
 router.get('/view/:storyId', function(req, res, next) {
 	//res.redirect('/stories');
 	var storyId = req.params.storyId;
-	
-
-	var collection = db.get('stories');
+		var collection = db.get('stories');
 	collection.find({ _id : storyId },{},function(e,docs){
 		res.render('view', { story: docs[0] });
 	});
 	
 });
+
+
+/* GET View page. */
+router.get('/community/view/:storyId', function(req, res, next) {
+	//res.redirect('/stories');
+	var storyId = req.params.storyId;
+		var collection = db.get('community');
+	collection.find({ _id : storyId },{},function(e,docs){
+		res.render('view', { story: docs[0] });
+	});
+	
+});
+
 
 /* GET story list. 
 TODO get story using id from url */
