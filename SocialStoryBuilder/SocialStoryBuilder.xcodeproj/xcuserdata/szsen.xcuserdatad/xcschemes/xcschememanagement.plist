@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>SocialStoryBuilder.xcscheme</key>
+		<key>SocialStoryBuilder.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -13,6 +13,16 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>AB1A526D1BF54145002FCFF8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB51D8011C17C65C00D534E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB61867E1BFC3BAC00940CC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -28,6 +28,46 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB61867E1BFC3BAC00940CC6"
+               BuildableName = "SocialStoryBuilderTests.xctest"
+               BlueprintName = "SocialStoryBuilderTests"
+               ReferencedContainer = "container:SocialStoryBuilder.xcodeproj">
+            </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "SocialStoryBuilderTests/testExample()">
+               </Test>
+               <Test
+                  Identifier = "SocialStoryBuilderTests/testGIFImagePerformanceExample()">
+               </Test>
+               <Test
+                  Identifier = "SocialStoryBuilderTests/testJPGImagePerformanceExample()">
+               </Test>
+               <Test
+                  Identifier = "SocialStoryBuilderTests/testNoFileTypeImagePerformanceExample()">
+               </Test>
+               <Test
+                  Identifier = "SocialStoryBuilderTests/testPNGImagePerformanceExample()">
+               </Test>
+               <Test
+                  Identifier = "SocialStoryBuilderUITests/testExample()">
+               </Test>
+            </SkippedTests>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AB51D8011C17C65C00D534E6"
+               BuildableName = "SocialStoryBuilderUITests.xctest"
+               BlueprintName = "SocialStoryBuilderUITests"
+               ReferencedContainer = "container:SocialStoryBuilder.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
