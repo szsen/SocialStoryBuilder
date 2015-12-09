@@ -19,6 +19,7 @@
 		AB1A528F1BF58366002FCFF8 /* teddylay.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB1A528E1BF58366002FCFF8 /* teddylay.jpg */; };
 		AB1A52931BF5A546002FCFF8 /* teddylin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB1A52921BF5A546002FCFF8 /* teddylin.jpg */; };
 		AB1A52951BF5A54F002FCFF8 /* teddycab.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AB1A52941BF5A54F002FCFF8 /* teddycab.jpg */; };
+		AB51D8051C17C65D00D534E6 /* SocialStoryBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB51D8041C17C65D00D534E6 /* SocialStoryBuilderUITests.swift */; };
 		AB6186641BF7839900940CC6 /* StudentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186631BF7839900940CC6 /* StudentCollectionViewCell.swift */; };
 		AB6186661BF78DEE00940CC6 /* StoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186651BF78DEE00940CC6 /* StoryCollectionViewCell.swift */; };
 		AB6186681BF948C000940CC6 /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB6186671BF948C000940CC6 /* Story.swift */; };
@@ -42,6 +43,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		AB51D8071C17C65D00D534E6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB1A52661BF54145002FCFF8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AB1A526D1BF54145002FCFF8;
+			remoteInfo = SocialStoryBuilder;
+		};
 		AB6186841BFC3BAC00940CC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AB1A52661BF54145002FCFF8 /* Project object */;
@@ -66,6 +74,9 @@
 		AB1A528E1BF58366002FCFF8 /* teddylay.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = teddylay.jpg; sourceTree = "<group>"; };
 		AB1A52921BF5A546002FCFF8 /* teddylin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = teddylin.jpg; sourceTree = "<group>"; };
 		AB1A52941BF5A54F002FCFF8 /* teddycab.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = teddycab.jpg; sourceTree = "<group>"; };
+		AB51D8021C17C65C00D534E6 /* SocialStoryBuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocialStoryBuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB51D8041C17C65D00D534E6 /* SocialStoryBuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialStoryBuilderUITests.swift; sourceTree = "<group>"; };
+		AB51D8061C17C65D00D534E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB6186631BF7839900940CC6 /* StudentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB6186651BF78DEE00940CC6 /* StoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		AB6186671BF948C000940CC6 /* Story.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
@@ -110,6 +121,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB51D7FF1C17C65C00D534E6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB61867C1BFC3BAC00940CC6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -125,6 +143,7 @@
 			children = (
 				AB1A52701BF54145002FCFF8 /* SocialStoryBuilder */,
 				AB6186801BFC3BAC00940CC6 /* SocialStoryBuilderTests */,
+				AB51D8031C17C65D00D534E6 /* SocialStoryBuilderUITests */,
 				AB1A526F1BF54145002FCFF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,6 +153,7 @@
 			children = (
 				AB1A526E1BF54145002FCFF8 /* SocialStoryBuilder.app */,
 				AB61867F1BFC3BAC00940CC6 /* SocialStoryBuilderTests.xctest */,
+				AB51D8021C17C65C00D534E6 /* SocialStoryBuilderUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +204,15 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		AB51D8031C17C65D00D534E6 /* SocialStoryBuilderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AB51D8041C17C65D00D534E6 /* SocialStoryBuilderUITests.swift */,
+				AB51D8061C17C65D00D534E6 /* Info.plist */,
+			);
+			path = SocialStoryBuilderUITests;
+			sourceTree = "<group>";
+		};
 		AB6186801BFC3BAC00940CC6 /* SocialStoryBuilderTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +242,24 @@
 			productName = SocialStoryBuilder;
 			productReference = AB1A526E1BF54145002FCFF8 /* SocialStoryBuilder.app */;
 			productType = "com.apple.product-type.application";
+		};
+		AB51D8011C17C65C00D534E6 /* SocialStoryBuilderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AB51D8091C17C65D00D534E6 /* Build configuration list for PBXNativeTarget "SocialStoryBuilderUITests" */;
+			buildPhases = (
+				AB51D7FE1C17C65C00D534E6 /* Sources */,
+				AB51D7FF1C17C65C00D534E6 /* Frameworks */,
+				AB51D8001C17C65C00D534E6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AB51D8081C17C65D00D534E6 /* PBXTargetDependency */,
+			);
+			name = SocialStoryBuilderUITests;
+			productName = SocialStoryBuilderUITests;
+			productReference = AB51D8021C17C65C00D534E6 /* SocialStoryBuilderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		AB61867E1BFC3BAC00940CC6 /* SocialStoryBuilderTests */ = {
 			isa = PBXNativeTarget;
@@ -246,6 +293,11 @@
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = RMB83YZHH2;
 					};
+					AB51D8011C17C65C00D534E6 = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = RMB83YZHH2;
+						TestTargetID = AB1A526D1BF54145002FCFF8;
+					};
 					AB61867E1BFC3BAC00940CC6 = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = RMB83YZHH2;
@@ -268,6 +320,7 @@
 			targets = (
 				AB1A526D1BF54145002FCFF8 /* SocialStoryBuilder */,
 				AB61867E1BFC3BAC00940CC6 /* SocialStoryBuilderTests */,
+				AB51D8011C17C65C00D534E6 /* SocialStoryBuilderUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -287,6 +340,13 @@
 				AB1A528F1BF58366002FCFF8 /* teddylay.jpg in Resources */,
 				AB1A52771BF54145002FCFF8 /* Main.storyboard in Resources */,
 				AB1A52951BF5A54F002FCFF8 /* teddycab.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AB51D8001C17C65C00D534E6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,6 +375,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AB51D7FE1C17C65C00D534E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB51D8051C17C65D00D534E6 /* SocialStoryBuilderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AB61867B1BFC3BAC00940CC6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -327,6 +395,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		AB51D8081C17C65D00D534E6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AB1A526D1BF54145002FCFF8 /* SocialStoryBuilder */;
+			targetProxy = AB51D8071C17C65D00D534E6 /* PBXContainerItemProxy */;
+		};
 		AB6186851BFC3BAC00940CC6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AB1A526D1BF54145002FCFF8 /* SocialStoryBuilder */;
@@ -467,6 +540,30 @@
 			};
 			name = Release;
 		};
+		AB51D80A1C17C65D00D534E6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialStoryBuilderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialStoryBuilder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AB51D80B1C17C65D00D534E6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SocialStoryBuilderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.startupsystems.SocialStoryBuilderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SocialStoryBuilder;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
 		AB6186871BFC3BAC00940CC6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -511,6 +608,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		AB51D8091C17C65D00D534E6 /* Build configuration list for PBXNativeTarget "SocialStoryBuilderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB51D80A1C17C65D00D534E6 /* Debug */,
+				AB51D80B1C17C65D00D534E6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		AB6186861BFC3BAC00940CC6 /* Build configuration list for PBXNativeTarget "SocialStoryBuilderTests" */ = {
 			isa = XCConfigurationList;

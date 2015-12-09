@@ -91,7 +91,8 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         
         timePerPanel[currentPage] += seconds
         
-        //Saving time to Parse
+        //Saving time to Parse for practice
+        /*
         let testObject = PFObject(className: "TestObject")
         testObject["foo"] = "bar"
         testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
@@ -115,7 +116,35 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         studentTimeObject.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in
             print("student time object saved")
+        } */
+        
+        //Writing to MongoDB database
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/api/add-new-stats")!)
+        request.HTTPMethod = "POST"
+        //let postString = "id=13&name=Jack"+"hello"
+        let sum = timePerPanel.reduce(0, combine: +)
+        var postString = "student=" + studentName! + "&story=" + storyTitle!
+        postString = postString + "&panel1Time=" + String(timePerPanel[0]) + "&panel2Time=" + String(timePerPanel[1])
+        postString = postString + "&panel3Time=" + String(timePerPanel[2]) + "&panel4Time=" + String(timePerPanel[3])
+        postString = postString + "&panel5Time=" + String(timePerPanel[4]) + "&panel6Time=" + String(timePerPanel[5])
+        postString = postString + "&totalTime=" + String(sum)
+        print(postString)
+
+        request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            
+            if error != nil {
+                print("error=\(error)")
+                return
+            }
+            
+            print("response = \(response)")
+            
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            print("responseString = \(responseString)")
         }
+        task.resume()
     }
 
     override func didReceiveMemoryWarning() {

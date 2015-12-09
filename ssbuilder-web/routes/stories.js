@@ -58,7 +58,7 @@ router.get('/community', function(req, res) {
 	});
 });
 
-/* GET create new story page. */
+/* POST edit story page. */
 router.post('/edit-new-story', function(req, res) {
 	var panels = [];
 	var title = req.body.storyTitle;
@@ -85,6 +85,36 @@ router.post('/edit-new-story', function(req, res) {
 				res.redirect("/edit-story/"+doc._id);
 			}
 		});
+	});
+});
+
+/* POST add timing stats */
+router.post('/api/add-new-stats', function(req, res) {
+	//potentially req.params.stats
+	//or console.log
+	console.log(req.body); //or stats or name
+	console.log("blah");
+	var student = req.body.student;
+	var story = req.body.story;
+	var panel1Time = req.body.panel1Time;
+	var panel2Time = req.body.panel2Time;
+	var panel3Time = req.body.panel3Time;
+	var panel4Time = req.body.panel4Time;
+	var panel5Time = req.body.panel5Time;
+	var panel6Time = req.body.panel6Time;
+	var totalTime = req.body.totalTime;
+
+	var collection = db.get('timeStatistics');
+	// Submit to the DB
+	collection.insert({ "studentName": student, "story": story, "panel1Time": panel1Time, "panel2Time":panel2Time, "panel3Time": panel3Time, "panel4Time":panel4Time, "panel5Time": panel5Time, "panel6Time": panel6Time, "totalTime": totalTime}, {}, function (err, doc) {
+		if (err) {
+			// If it failed, return error
+			res.send("There was a problem adding the information to the database.");
+		}
+		else {
+			// And forward to success page
+			//res.redirect(302, "/stories");
+		}
 	});
 });
 
