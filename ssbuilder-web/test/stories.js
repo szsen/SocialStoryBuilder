@@ -7,9 +7,11 @@ var app = require('../app');
 var mongo = require('mongodb');
 var monk = require('monk');
 var db = monk('/socialStories');
+var cheerio = require('cheerio');
 
 describe('Story API', function(){
 	var testName = 'Test Story';
+	var testId = '';
 	it ('POST request should create a test story', function(done){
 		request(app)
 			.post('/edit-new-story')
@@ -30,9 +32,24 @@ describe('Story API', function(){
 		.get('/api/stories').end(function(err, res){
 			// check that response is okay
 			expect(res).to.exist;
+			testId = res.body._id;
 			expect(res.status).to.equal(200);
 			expect(res.body.title).to.equal('Test Story');
 			expect(res.body.description).to.equal('Test Description');
+			//expect(res.body.url).to.equal('http://placehold.it/320x150');
+			done();
+		});
+	});
+	it ('GET request should return the view page of the story we just created', function(done){
+		request(app)
+		.get('/view/'+testId).end(function(err, res){
+			// check that response is okay
+			expect(res).to.exist;
+			expect(res.status).to.equal(200);
+			$ = cheerio.load(res.text);
+			//console.log($('li'));
+			expect( $('h1').html() ).to.equal('Test Story');
+			expect($('.item').length).to.equal(6);
 			//expect(res.body.url).to.equal('http://placehold.it/320x150');
 			done();
 		});

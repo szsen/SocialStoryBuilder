@@ -19,7 +19,7 @@ router.get('/stories', function(req, res) {
 	collection.find({},{},function(err,docs){
 		collection = db.get('stories');
 		collection.find({},{sort: {title: 1}},function(e,d){
-			console.log(d);
+			//console.log(d);
 			res.render('stories', {
 				"storylist" : d, 
 				"studentlist" : docs
@@ -51,7 +51,6 @@ router.get('/community', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('community');
 	collection.find({},{},function(err,docs){
-		console.log(docs);
 		res.render('community', {
 			"storylist" : docs
 		});
@@ -91,7 +90,6 @@ router.post('/edit-new-story', function(req, res) {
 
 /* GET edit story page. */
 router.get('/edit-story/:storyId', function(req, res) {
-	console.log('asdfasdfadsfaf');
 	var storyId = req.params.storyId;
 	var collection = db.get('stories');
 	collection.find({ _id : storyId },{},function(e,docs){
@@ -232,7 +230,6 @@ router.post('/update-panel/:storyId/:ind', function(req, res) {
 	collection.find({ _id : storyId },{},function(err,docs){
 		var panels = docs[0].panels;
 		panels[index] = panel;
-		console.log(panels);
 		collection.update({ _id : storyId }, { $set : {
 			"panels" : panels
 		} }, function(e, d) {
@@ -254,7 +251,6 @@ router.get('/api/stories', function(req, res) {
 	//res.send('respond with a resource');
 	var collection = db.get('stories');
 	collection.find({},{},function(e,docs){
-		console.log(docs);
 		res.json(docs[docs.length - 1]);
 	});
 });

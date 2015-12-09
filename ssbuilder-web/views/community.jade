@@ -38,9 +38,9 @@ block content
                   img(src='#{story.panels[0].url}', alt='', style="height: 150px; width: 320px; overflow:hidden; position:relative;" )
                   .caption(style="text-align:center;")
                     h4
-                      a(href='view/' + story._id)= story.title
+                      a(href='/community/view/' + story._id)= story.title
                     p
-                      a.btn.btn-default(href='#') View
+                      a.btn.btn-default(href='/community/view/' + story._id) View
                       | &nbsp;
                       | &nbsp;
                       a.btn.btn-default.openDownloadModal(type='button' data-toggle='modal', data-id='#{story._id}', data-target='#downloadModal') Download
