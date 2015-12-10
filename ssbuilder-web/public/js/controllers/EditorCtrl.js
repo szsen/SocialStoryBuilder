@@ -1,13 +1,12 @@
 /*jshint loopfunc: true */
 //editor controller
-angular.module('EditorCtrl', []).controller('EditorController', function($scope, $document, $attrs) {
+angular.module('EditorCtrl', []).controller('EditorController', function($scope, $document, $attrs, $http) {
   var imageSearch;
   console.log('paneldata');
   var paneldata = JSON.parse($attrs.paneldata);
   $scope.formUrl = "/update-panel/"+ paneldata._id + "/"+ paneldata.ind;
   $scope.caption = paneldata.caption;
   $scope.image = paneldata.url;
-  console.log($scope.ind);
 
   function addImage(imgUrl) {
     var input = document.getElementById('subject');
@@ -16,15 +15,15 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
     img.src = imgUrl;
   }
 
-  function searchComplete() {
+  function searchComplete(response) {
         // Check that we got results
-        if (imageSearch.results && imageSearch.results.length > 0) {
+        if (response.data.items && response.data.items.length > 0) {
 
           // Grab our content div, clear it.
           var contentDiv = document.getElementById('content');
           contentDiv.innerHTML = '';
 
-          var results = imageSearch.results;
+          var results = response.data.items;
           for (var i = 0; i < results.length; i++) {
             // For each result write it's title and image to the screen
             var result = results[i];
@@ -37,8 +36,8 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
             var newImg = document.createElement('img');
 
             // There is also a result.url property which has the escaped version
-            newImg.src=result.tbUrl;
-            newImg.setAttribute('realLink', result.url);
+            newImg.src=result.image.thumbnailLink;
+            newImg.setAttribute('realLink', result.link);
             newImg.setAttribute('style', 'display:block; margin:auto; padding:10px;');
             newImg.addEventListener("click", function(e){
             addImage(e.target.attributes[1].value);
@@ -53,19 +52,24 @@ angular.module('EditorCtrl', []).controller('EditorController', function($scope,
       }
 
       $scope.search = function() {
-    console.log('in search');
-        // Create an Image Search instance.
-        imageSearch = new google.search.ImageSearch();
-        imageSearch.setResultSetSize(8);
-        // Set searchComplete as the callback function when a search is 
-        // complete.  The imageSearch object will have results in it.
-        imageSearch.setSearchCompleteCallback(this, searchComplete, null);
+        console.log('in search');
 
         // Find me a beautiful car.
-        imageSearch.execute($scope.searchQuery + ' clipart');
-        
-        // Include the required Google branding
-        google.search.Search.getBranding('branding');
+        console.log($scope.searchQuery);
+        //console.log(imageSearch.execute($scope.searchQuery));
+        var cx = '018124525132556857150:uirayrb6cp0';
+        $http({
+          method: 'GET',
+          url: 'https://www.googleapis.com/customsearch/v1?key=AIzaSyAg7vvZmykQsIWuyyKu-Jvj2AdshF3y7c8&cx=018124525132556857150:uirayrb6cp0&searchType=image&imgType=clipart&q=' + $scope.searchQuery + ' clipart'
+        }).then(function successCallback(response) {
+            console.log(response);
+            searchComplete(response);
+            // this callback will be called asynchronously
+            // when the response is available
+          }, function errorCallback(response) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+          });
   };
 
   setTimeout(function(){

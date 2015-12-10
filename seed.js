@@ -241,7 +241,7 @@ var timestats = [
     {name: "Roger Chen", story: "Brushing Your Teeth", panel1Time: "3.72493904829025", panel2Time: "1.795165956020355", panel3Time: "0.648622989654541", panel4Time: "1.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "12.0999930500984" },
     {name: "Sonia Sen", story: "Washing Hands", panel1Time: "3.72493904829025", panel2Time: "1.795165956020355", panel3Time: "0.648622989654541", panel4Time: "1.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "12.0999930500984" },
     {name: "Rachel Wang", story: "Asking Nicely", panel1Time: "3.72493904829025", panel2Time: "1.795165956020355", panel3Time: "0.648622989654541", panel4Time: "1.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "12.0999930500984" },
-    {name: "Roger Chen", story: "Rules for Schools", panel1Time: "3.72493904829025", panel2Time: "3.795165956020355", panel3Time: "2.648622989654541", panel4Time: "3.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "18.0999930500984" 
+    {name: "Roger Chen", story: "Rules for Schools", panel1Time: "3.72493904829025", panel2Time: "3.795165956020355", panel3Time: "2.648622989654541", panel4Time: "3.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "18.0999930500984" },
     {name: "Roger Chen", story: "Brushing Your Teeth", panel1Time: "3.72493904829025", panel2Time: "3.795165956020355", panel3Time: "2.648622989654541", panel4Time: "3.79215705394745", panel5Time: "2.91204702854156", panel6Time: "2.22706097364426", totalTime: "18.0999930500984" },
 ];
 

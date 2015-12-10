@@ -117,6 +117,33 @@ router.post('/api/add-new-stats', function(req, res) {
 	});
 });
 
+/* Get add timing stats */
+router.get('/stats/:storyId', function(req, res) {
+	var storyId = req.params.storyId;
+	var collection = db.get('stories');
+	// Submit to the DB
+	collection.find({ _id:storyId}, {}, function (err, doc) {
+		var name = doc[0].title;
+		collection = db.get('timeStatistics');
+		collection.find({ story:name}, {}, function (e1, d1) {
+			var stat = d1[0];
+			console.log(stat);
+			times = [];
+			totTime = 0;
+			for (var k in stat) {
+				if (k.indexOf('panel') > -1) {
+					times.push(stat[k]);
+				} else if (k.indexOf('total') > -1) {
+					totTime = stat[k];
+				}
+			}
+			stat = { title: name, "times" : times, 'totTime' : totTime };
+			res.render('stats', {
+				"story" : stat
+			});
+		});
+	});
+});
 
 /* GET edit story page. */
 router.get('/edit-story/:storyId', function(req, res) {

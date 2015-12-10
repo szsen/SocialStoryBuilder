@@ -54,6 +54,9 @@ block content
               button.btn.btn-default.openCopyModal(type='button' data-toggle='modal', data-target='#uploadModal') Upload
               | &nbsp
               | &nbsp
+              a.btn.btn-default(href='/stats/#{story._id}', role='button') Stats
+              | &nbsp
+              | &nbsp
               button#submit.btn.btn-primary(type='submit', name='submit') Done
     #copyModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='copyModal')
       .modal-dialog(role='document')

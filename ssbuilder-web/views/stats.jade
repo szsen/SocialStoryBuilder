@@ -1,0 +1,92 @@
+extends layout
+
+block content
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Social Story Builder
+    // Bootstrap Core CSS
+    link(href='/libs/bootstrap/dist/css/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/css/story-list.css', rel='stylesheet')
+    link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Short+Stack')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js', charset='utf-8')
+    style.
+      .axis path {
+      fill: none;
+      stroke: #777;
+      shape-rendering: crispEdges;
+      }
+      .axis text {
+      font-family: Lato;
+      font-size: 13px;
+      }
+  body
+    script(type='text/javascript').
+      WIDTH = 1000,
+      HEIGHT = 380,
+      MARGINS = {
+          top: 20,
+          right: 30,
+          bottom: 20,
+          left: 80
+      };
+      $( document ).ready(function() {
+        var times ="#{story.times}";
+        var vis = d3.select("#viz");
+        times = times.split(',');
+        for (i = 0; i < times.length; i++) { 
+          times[i]= parseInt(times[i]);
+        }
+        console.log(vis);
+        console.log(times);
+        var formatxAxis = d3.format('.0f');
+        xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right,]).domain([0, 5]),
+        yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, 10]);
+
+        var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickFormat(formatxAxis).ticks(5);
+
+        var yAxis = d3.svg.axis().scale(yScale).orient("left");
+
+
+        vis.append("svg:g").attr("class","axis").attr("transform", "translate(0," + (HEIGHT - MARGINS.bottom) + ")")
+          .call(xAxis);
+         
+        vis.append("svg:g").attr("class","axis").attr("transform", "translate(" + (MARGINS.left) + ",0)")
+          .call(yAxis);
+
+        var lineGen = d3.svg.line().x(function(d, i) {
+          console.log(i);
+          return xScale(i);
+        })
+        .y(function(d) {
+          //console.log(d);
+          return yScale(d);
+        })
+        .interpolate("basis");
+
+        vis.append('svg:path').attr('d', lineGen(times)).attr('stroke', 'green')
+          .attr('stroke-width', 3).attr('fill', 'none');
+        vis.append("text")
+          .attr("class", "x label")
+          .attr("text-anchor", "end")
+          .attr("x", WIDTH / 2)
+          .attr("y", HEIGHT + 20)
+          .text("Panel");
+        vis.append("text")
+          .attr("class", "y label")
+          .attr("text-anchor", "end")
+          .attr("x", -100)
+          .attr("dy", ".75em")
+          .attr("transform", "rotate(-90)")
+          .text("Time Spent (sec)");
+      });
+
+    .container
+      .row
+        .col-md-9
+          p.lead(style="padding-top: 20px;")=story.title
+          svg#viz(width='1000', height='500')
