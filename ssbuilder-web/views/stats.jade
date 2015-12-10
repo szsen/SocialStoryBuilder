@@ -44,8 +44,8 @@ block content
         console.log(vis);
         console.log(times);
         var formatxAxis = d3.format('.0f');
-        xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right,]).domain([0, 5]),
-        yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, 10]);
+        xScale = d3.scale.linear().range([MARGINS.left, WIDTH - MARGINS.right,]).domain([0, times.length - 1]),
+        yScale = d3.scale.linear().range([HEIGHT - MARGINS.top, MARGINS.bottom]).domain([0, Math.max.apply(Math, times) + 1]);
 
         var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickFormat(formatxAxis).ticks(5);
 
