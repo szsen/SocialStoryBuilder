@@ -1,0 +1,131 @@
+doctype html
+html(lang='en')
+  head         
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Landing Page - Start Bootstrap Theme
+    // Bootstrap Core CSS
+    link(href='/stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom CSS
+    link(href='/stylesheets/landing-page.css', rel='stylesheet')
+    // Custom Fonts
+    link(href='/libs/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    // Navigation
+    nav.navbar.navbar-default.navbar-fixed-top.topnav(role='navigation')
+      .container.topnav
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand.topnav(href='#') Welcome to the Social Story Builder
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav.navbar-right
+            li
+              a(href='#about') Login
+            li
+              a(href='#services') About
+            li
+              a(href='#contact') Contact
+        // /.navbar-collapse
+      // /.container
+    // Header
+    a(name='about')
+    .intro-header
+      .container
+        .row
+          .col-lg-12
+            .intro-message
+              h1 Welcome
+              h1 Social Story Builder
+              hr.intro-divider
+              ul.list-inline.intro-social-buttons
+            .container
+              form.form#formAddUser(name="checkuser",method="post",action="/checkuser")
+                input(type='text', placeholder='Username', name = 'username')
+                input(type='password', placeholder='Password', name = 'password')
+                button#login-button(type='submit') Login
+                button#login-button(type='submit') New User
+      // /.container
+    // /.intro-header
+    // Page Content
+    a(name='services')
+    .content-section-a
+      .container
+        .row
+          .col-lg-5.col-sm-6
+            hr.section-heading-spacer
+            .clearfix
+            h2.section-heading Why Social Story Builder ?
+            p.lead
+              a(target='_blank', href='http://www.educateautism.com/social-stories.html') Social Stories
+              |  are an educational tool used by teachers of developmentally disabled individuals. Currently, social stories are generally created in a Word document and printed out. We create a web application that would allow teachers, therapists, or parents to create social stories for a student. This would include an editor for uploading pictures and adding text in a global community.
+          .col-lg-5.col-lg-offset-2.col-sm-6
+            img.img-responsive(src='images/web.png', alt='')
+      // /.container
+    // /.content-section-a
+    .content-section-b
+      .container
+        .row
+          .col-lg-5.col-lg-offset-1.col-sm-push-6.col-sm-6
+            hr.section-heading-spacer
+            .clearfix
+            h2.section-heading Mobile Component
+            p.lead
+              | We also create an ios App where a teacher could bring up the social story on a tablet and go through it with the student. Generally, this app could be used as a boardmaker.
+          .col-lg-5.col-sm-pull-6.col-sm-6
+            img.img-responsive(src='images/ipad.png', alt='')
+      // /.container
+    // /.content-section-b
+    a(name='contact')
+    .banner
+      .container
+        .row
+          .col-lg-6
+            h2 Connect to the team:
+          .col-lg-6
+            ul.list-inline.banner-social-buttons
+              li
+                a.btn.btn-default.btn-lg(href='http://tech.cornell.edu/')
+                  i.fa.fa-twitter.fa-fw
+                  span.network-name CornellTech
+              li
+                a.btn.btn-default.btn-lg(href='https://github.com/Cornell-CS5356-Fall2015/cs5356/blob/master/projects/social-story-builder.md')
+                  i.fa.fa-github.fa-fw
+                  span.network-name Github
+      // /.container
+    // /.banner
+    // Footer
+    footer
+      .container
+        .row
+          .col-lg-12
+            ul.list-inline
+              li
+                a(href='#') Home
+              li.footer-menu-divider ⋅
+              li
+                a(href='#about') About
+              li.footer-menu-divider ⋅
+              li
+                a(href='#contact') Contact
+            p.copyright.text-muted.small Copyright © Social Story Builder Team. All Rights Reserved
+    // jQuery
+    script(src='js/jquery.js')
+    // Bootstrap Core JavaScript
+    script(src='js/bootstrap.min.js')
+

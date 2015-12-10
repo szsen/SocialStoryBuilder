@@ -43,16 +43,5 @@ class SocialStoryBuilderUITests: XCTestCase {
         XCTAssertEqual(cells.count, 2, "found instead: \(cells.debugDescription)")
     }
     
-    func testSelectStudentSelectStory() {
-        
-        let collectionViewsQuery = XCUIApplication().collectionViews
-        collectionViewsQuery.staticTexts["Sonia Sen"].tap()
-        collectionViewsQuery.staticTexts["Washing Hands"].tap()
-        
-    }
-    
-    func testTimer(){
-        //Make sure timer value for at least slide 1 and totalTime is greater than 0
-    }
     
 }
