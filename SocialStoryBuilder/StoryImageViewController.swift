@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class StoryImageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
@@ -91,38 +90,11 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         
         timePerPanel[currentPage] += seconds
         
-        //Saving time to Parse for practice
-        /*
-        let testObject = PFObject(className: "TestObject")
-        testObject["foo"] = "bar"
-        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            print("Object has been saved.")
-        }
-        
-        let studentTimeObject = PFObject(className: "StoryRead")
-        studentTimeObject["student"] = studentName
-        studentTimeObject["story"] = storyTitle
-        
-        studentTimeObject["panelTime1"] = timePerPanel[0]
-        studentTimeObject["panelTime2"] = timePerPanel[1]
-        studentTimeObject["panelTime3"] = timePerPanel[2]
-        studentTimeObject["panelTime4"] = timePerPanel[3]
-        studentTimeObject["panelTime5"] = timePerPanel[4]
-        studentTimeObject["panelTime6"] = timePerPanel[5]
-        
-        let sum = timePerPanel.reduce(0, combine: +)
-        studentTimeObject["totalTime"] = sum
-        
-        studentTimeObject.saveInBackgroundWithBlock {
-            (success: Bool, error: NSError?) -> Void in
-            print("student time object saved")
-        } */
-        
         //Writing to MongoDB database
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/api/add-new-stats")!)
         request.HTTPMethod = "POST"
-        //let postString = "id=13&name=Jack"+"hello"
         let sum = timePerPanel.reduce(0, combine: +)
+        
         var postString = "student=" + studentName! + "&story=" + storyTitle!
         postString = postString + "&panel1Time=" + String(timePerPanel[0]) + "&panel2Time=" + String(timePerPanel[1])
         postString = postString + "&panel3Time=" + String(timePerPanel[2]) + "&panel4Time=" + String(timePerPanel[3])
@@ -233,7 +205,7 @@ class StoryImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView!) {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
         // Load the pages that are now on screen
         loadVisiblePages()
         

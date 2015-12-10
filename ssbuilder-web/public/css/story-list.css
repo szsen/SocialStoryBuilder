@@ -7,6 +7,7 @@
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     font-family: Short Stack;
+    background-color: #EEDDCC
 }
 
 /*
@@ -24,6 +25,9 @@ a.btn#delete {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d2978d), color-stop(100%,#852539)); /* webkit 
 } 
 */
+.navbar {
+    background-color: #663344
+}
 
 .slide-image {
     width: 100%;
