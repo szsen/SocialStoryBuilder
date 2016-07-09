@@ -2,4 +2,4 @@ language: objective-c
 osx_image: xcode7.1
 xcode_project: SocialStoryBuilder/SocialStoryBuilder.xcodeproj
 xcode_scheme: SocialStoryBuilder
-xcode_sdk: iphonesimulator9.0
+xcode_sdk: iphonesimulator9.1
